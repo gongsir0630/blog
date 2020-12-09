@@ -194,7 +194,8 @@ highlight:
   method: 1
   code_color: "#fafafa"     # 代码块颜色
   gutter_color: "#f2f2f2"   # 代码行号块颜色
-  style: https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/github.css
+  # style: https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/github.css
+  style: https://cdn.jsdelivr.net/npm/highlight.js@10.4.1/styles/tomorrow.css
 
 
 
@@ -222,8 +223,8 @@ Click:
 # Valine 评论系统  https://valine.js.org
 valine:
   enable: true # 如果使用valine，请设置改之为true
-  appid: # leancloud application app id
-  appkey: # leancloud application app key
+  appid: 7sd5RvAKvPf0dty5f4QfFL7R-gzGzoHsz # leancloud application app id
+  appkey: gjLXJe9CumUibqTPtE6TmIQn # leancloud application app key
   placeholder: 评论记得带上邮箱,你的留言我会马上收到邮箱提醒哒
   avatar: mm # gravatar style
   lang: zh-CN # i18n: zh-CN/zh-TW/en/ja
@@ -232,13 +233,14 @@ valine:
   pageSize: 10 # pagination size
   recordIP: false # 是否记录评论者IP
   serverURLs:
-  emojiCDN: 
+  emojiCDN: https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/
   enableQQ: true
 
 
 # stylesheets loaded in the <head>
 stylesheets:
 - /css/style.css
+- /css/partial/highlight/atom-one-light.css # highlight代码高亮样式
 - https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css
 #- https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
 - https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css
