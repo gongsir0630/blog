@@ -1,0 +1,3 @@
+[submodule "themes/blank"]
+	path = themes/blank
+	url = https://github.com/a2396837/hexo-theme-blank.git
