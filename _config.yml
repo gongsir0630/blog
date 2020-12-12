@@ -104,7 +104,14 @@ theme: blank
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: rsync
+  host: '$HOST'
+  user: '$USER'
+  root: '$ROOT'
+  port: 22
+  delete: true
+  verbose: true
+  ignore_errors: false
 
 #### 自定义settings
 
