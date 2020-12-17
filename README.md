@@ -10,4 +10,4 @@
 
 ### 系列文章
 
-1. [MyBlog-Hexo搭建自己的博客](/2020/12/14/MyBlog-Hexo/)
+1. [MyBlog-Hexo搭建自己的博客](https://blog.gongsir.club//2020/12/14/MyBlog-Hexo/)
