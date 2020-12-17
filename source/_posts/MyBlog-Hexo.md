@@ -123,7 +123,7 @@ Hexo官网: [Hexo](https://hexo.io/zh-cn/)<br>
    ```
 4. 运行方式：
    1. 因为生成的是静态html，因此可以直接打开`public/`，双击`index.html`运行；
-   2. 使用`hexo -s | hexo s --debug (debug模式)`.
+   2. 使用`hexo s | hexo s --debug (debug模式)`.
 
 ### 博客部署
 
