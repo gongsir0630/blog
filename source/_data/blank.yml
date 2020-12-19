@@ -183,8 +183,8 @@ page_404:
 # 备案:
 ICP:
   enable: true
-  link: 
-  text: 
+  link: http://www.beian.miit.gov.cn/
+  text: 蜀ICP备19016450号
 #  icon: /img/icp.png
 
 
@@ -226,15 +226,16 @@ valine:
   appid: 7sd5RvAKvPf0dty5f4QfFL7R-gzGzoHsz # leancloud application app id
   appkey: gjLXJe9CumUibqTPtE6TmIQn # leancloud application app key
   placeholder: 评论记得带上邮箱,你的留言我会马上收到邮箱提醒哒
-  avatar: mm # gravatar style
+  avatar: robohash # gravatar style
   lang: zh-CN # i18n: zh-CN/zh-TW/en/ja
   meta: nick,mail,link
   requiredFields: nick,mail # required fields (nick/mail)
   pageSize: 10 # pagination size
   recordIP: false # 是否记录评论者IP
-  serverURLs:
+  serverURLs: https://blog.gongsir.club
   emojiCDN: https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/
   enableQQ: true
+  path: window.location.pathname #当前文章页路径，用于区分不同的文章页
 
 
 # stylesheets loaded in the <head>
