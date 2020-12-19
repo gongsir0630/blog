@@ -28,7 +28,7 @@ fonts:
 # 顶部菜单  
 # 如果不需要显示某项,可以用'#'注释掉
 menu:
-  # search: /search/ || fas fa-search-plus || rgb(3 169 244)
+  search: /search/ || fas fa-search-plus || rgb(3 169 244)
   home: / || fab fa-fort-awesome || rgb(255 107 107)
   时间线: /archives/ || fas fa-archive || rgb(10 189 227)
   tag: /tags/ || fas fa-hashtag || rgb(254 202 87)
