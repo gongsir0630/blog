@@ -8,12 +8,13 @@ sticky: 1
 tags:
     - hexo
     - hexo-theme-blank
+    - MyBlog
 categories: 
     - 原创
 description: MyBlog 系列文章之一,介绍如何使用Hexo搭建博客环境
 ---
 
-MyBlog 系列文章之一, 这篇文章, 介绍如何使用[Hexo](https://hexo.io/zh-cn/)搭建博客环境, 以及Hexo的基本用法.
+**MyBlog** 系列文章之一, 这篇文章, 介绍如何使用[Hexo](https://hexo.io/zh-cn/)搭建博客环境, 以及Hexo的基本用法.
 
 <!-- more -->
 
