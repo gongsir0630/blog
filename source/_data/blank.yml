@@ -185,7 +185,7 @@ ICP:
   enable: true
   link: http://www.beian.miit.gov.cn/
   text: 蜀ICP备19016450号
-#  icon: /img/icp.png
+  icon: /img/icp.png
 
 
 
@@ -193,9 +193,9 @@ ICP:
 highlight:
   method: 1
   code_color: "#fafafa"     # 代码块颜色
-  gutter_color: "#f2f2f2"   # 代码行号块颜色
+  gutter_color: "#2D2D2D"   # 代码行号块颜色
   # style: https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/github.css
-  style: https://cdn.jsdelivr.net/npm/highlight.js@10.4.1/styles/tomorrow.css
+  style: https://cdn.jsdelivr.net/npm/highlight.js@10.4.1/styles/tomorrow-night-eighties.css
 
 
 
@@ -241,7 +241,7 @@ valine:
 # stylesheets loaded in the <head>
 stylesheets:
 - /css/style.css
-- /css/partial/highlight/atom-one-light.css # highlight代码高亮样式
+- /css/partial/highlight/tomorrow-night-eighties.css # highlight代码高亮样式
 - https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css
 #- https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
 - https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css
