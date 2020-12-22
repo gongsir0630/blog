@@ -29,7 +29,7 @@ description: MyBlog 系列文章之一,介绍如何使用Hexo搭建博客环境
 ### 系列文章目录
 
 1. [MyBlog-Hexo搭建自己的博客](/2020/12/14/MyBlog-Hexo/)
-
+2. [MyBlog-多平台代码托管](/2020/12/20/myblog-code.html)
 <hr/>
 
 ## 关于Hexo
