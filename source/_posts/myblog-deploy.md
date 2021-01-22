@@ -116,3 +116,4 @@ description: MyBlog 系列文章第三篇，将hexo项目通过Coding平台持�
 ![22fpDGmY](https://cdn.gongsir.club/blog/image/2021/01/22fpDGmY.png)
 
 9. 看成果:
+![自动部署展示](https://cdn.gongsir.club/blog/gif/myblog-deploy-show.gif)
