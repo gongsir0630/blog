@@ -4,7 +4,6 @@ comments: true
 auto_excerpt: true
 toc: true
 date: 2020-12-14 13:14:08
-sticky: 1
 tags:
     - hexo
     - hexo-theme-blank
@@ -30,7 +29,8 @@ description: MyBlog 系列文章之一,介绍如何使用Hexo搭建博客环境
 
 1. [MyBlog-Hexo搭建自己的博客](/2020/12/14/MyBlog-Hexo/)
 2. [MyBlog-多平台代码托管](/2020/12/20/myblog-code.html)
-<hr/>
+3. [MyBlog-Hexo项目持续集成发布](/2021/01/22/myblog-deploy.html)
+<hr>
 
 ## 关于Hexo
 

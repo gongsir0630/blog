@@ -28,6 +28,7 @@ description: MyBlog 系列文章第二篇，如何将hexo项目托管到多个�
 
 1. [MyBlog-Hexo搭建自己的博客](/2020/12/14/MyBlog-Hexo/)
 2. [MyBlog-多平台代码托管](/2020/12/20/myblog-code.html)
+3. [MyBlog-Hexo项目持续集成发布](/2021/01/22/myblog-deploy.html)
 <hr>
 
 ## 项目托管
