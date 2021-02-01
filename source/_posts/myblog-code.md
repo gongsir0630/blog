@@ -3,6 +3,7 @@ title: 2️⃣MyBlog-多平台代码托管
 comments: true
 auto_excerpt: true
 toc: true
+sticky: 2
 date: 2020-12-20 18:14:40
 tags:
     - hexo

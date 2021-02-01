@@ -3,6 +3,7 @@ title: 3️⃣MyBlog-Hexo项目持续集成发布
 comments: true
 auto_excerpt: true
 toc: true
+sticky: 1
 date: 2021-01-22 15:18:35
 tags:
     - hexo

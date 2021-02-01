@@ -3,6 +3,7 @@ title: 1️⃣MyBlog-Hexo搭建自己的博客
 comments: true
 auto_excerpt: true
 toc: true
+sticky: 3
 date: 2020-12-14 13:14:08
 tags:
     - hexo
