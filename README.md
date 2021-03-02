@@ -16,7 +16,6 @@ Hello👋，我是[码之泪殇](https://gongsir.club)，这里是我写博客�
 1. [MyBlog-Hexo搭建自己的博客](https://blog.gongsir.club/2020/12/14/MyBlog-Hexo/)
 2. [MyBlog-多平台代码托管](https://blog.gongsir.club/2020/12/20/myblog-code.html)
 3. [MyBlog-Hexo项目持续集成发布](https://blog.gongsir.club/2021/01/22/myblog-deploy.html)
-<hr>
 
 ## :speak_no_evil:[关于笔者](https://blog.gongsir.club/about/)
 目前大四在校生，热爱Java后端开发技术
