@@ -71,6 +71,9 @@ subtitle_social:
     # Netmusic:
     #   icon: iconfont icon-wangyiyunyinle1
     #   url: https://music.163.com/#/user/home?id=262078590
+    rss:
+      icon: iconfont icon-rss
+      url: /atom.xml
 
 
 # 全局音乐播放器
@@ -191,11 +194,8 @@ ICP:
 
 # highlight
 highlight:
-  method: 1
   code_color: "#fafafa"     # 代码块颜色
-  gutter_color: "#2D2D2D"   # 代码行号块颜色
-  # style: https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/github.css
-  style: https://cdn.jsdelivr.net/npm/highlight.js@10.4.1/styles/tomorrow-night-eighties.css
+  gutter_color: "#f2f2f2"   # 代码行号块颜色
 
 
 
@@ -220,6 +220,7 @@ Click:
   firework_script: https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/js/firework.js
 
 
+##评论系统，当您打开一个评论系统，其他评论系统必须关掉:enable: flase
 # Valine 评论系统  https://valine.js.org
 valine:
   enable: true # 如果使用valine，请设置改之为true
@@ -237,15 +238,23 @@ valine:
   enableQQ: true
   path: window.location.pathname #当前文章页路径，用于区分不同的文章页
 
+# OR
+
+#Waline 评论系统 https://waline.js.org
+waline:
+  enable: false
+  serverURL: 
+  avatar: monsterid # gravatar style https://zh-tw.gravatar.com/site/implement/images/#default-image
+  placeholder: Just go go # comment box placeholder
+
 
 # stylesheets loaded in the <head>
 stylesheets:
-- /css/style.css
-- /css/partial/highlight/tomorrow-night-eighties.css # highlight代码高亮样式
+- /css/partial/highlight/atom-one-light.css
 - https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css
 #- https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
 - https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css
-- https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/css/socialiconfont.css   # 社交图标的css
+- https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/css/iconfont.css
 
 # scripts loaded in the end of the body
 scripts:

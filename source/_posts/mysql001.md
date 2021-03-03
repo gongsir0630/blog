@@ -25,11 +25,11 @@ description: mysql安装完成后修改密码、配置远程连接、新建用�
 
 ### 创建新用户
 1. 经过以上配置,可使用ssh远程login到服务器,使用命令连接mysql:
-    ```shell
+    ```sh
     mysql -uroot -p
     ```
 2. 创建新用户:
-    ```mysql
+    ```sql
     CREATE USER 'username'@'host' IDENTIFIED BY 'password';
     ```
     **说明:**
@@ -37,13 +37,13 @@ description: mysql安装完成后修改密码、配置远程连接、新建用�
     - host: 指定该用户在哪个主机上可以登陆，如果是本地用户可用localhost，如果想让该用户可以从任意远程主机登陆，可以使用通配符`%`
     - passwd: 该用户的登录密码
 3. 删除用户:
-    ```mysql
+    ```sql
     DROP USER 'username'@'host';
     ```
 
 ### 授权
 对新创建的用户进行授权,授权可以访问、操作的库,表等.
-```mysql
+```sql
 GRANT privileges ON db.tab TO 'username'@'host'
 ```
 **说明:**
@@ -52,32 +52,32 @@ GRANT privileges ON db.tab TO 'username'@'host'
 - tab: db下的表名,全库全表可用`*.*`表示;
 
 刷新权限:
-```mysql
+```sql
 flush privileges;
 ```
 
 ### 设置与修改用户密码
 1. root用户可修改所有用户的密码,命令:
-    ```mysql
+    ```sql
     SET PASSWORD FOR 'username'@'host' = PASSWORD('newpassword');
     ```
 2. 当前用户语法糖:
-    ```mysql
+    ```sql
     SET PASSWORD = PASSWORD("newpassword");
     ```
 3. 修改简单密码会报错,此时可以修改密码策略:
     - 查看密码策略:
-    ```mysql
+    ```sql
     show variables like '%validate%';
     ```
     ![密码策略](https://cdn.gongsir.club/blog/image/2021/02/01AWXivL.png)
     - 修改策略:
-    ```mysql
+    ```sql
     set global validate_password_length=6;
     set global validate_password_policy=0;
     ```
 4. 修改访问主机:
-    ```mysql
+    ```sql
     use mysql;
     update user set host='host' where user='username';
     ```

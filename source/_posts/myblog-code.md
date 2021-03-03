@@ -45,15 +45,15 @@ description: MyBlog 系列文章第二篇，如何将hexo项目托管到多个�
 
 所以我们只需要将上述文件托管在GitHub、Coding等平台就可以，以后使用的时候，只需要本地安装node环境，然后拉取分支，执行：
 1. 安装hexo-cli：
-    ```bash
+    ```sh
     npm install -g hexo-cli
     ```
 2. 安装npm依赖：
-    ```bash
+    ```sh
     npm install
     ```
 3. 解析生成静态文件：
-    ```bash
+    ```sh
     hexo g
     ```
 
@@ -61,11 +61,11 @@ description: MyBlog 系列文章第二篇，如何将hexo项目托管到多个�
 
 1. 登录GitHub，新建repository，复制仓库地址`@your_url`；
 2. 本地代码文件夹`(blog.gongsir.club)`初始化，设置远程仓库地址：
-   ```bash
+   ```sh
    git remote add origin @your_url
    ```
    🌟注意：这里需要将`themes/blank`加为子模块（第一篇文章中提过，方便主题升级），此时项目根目录会自动生成一个`.gitmodules`文件，也需要上传到远程仓库：
-   ```bash
+   ```sh
    git submodule add https://github.com/a2396837/hexo-theme-blank.git themes/blank
    ```
 3. 将本地代码push上去，文件结构如下：
@@ -87,7 +87,7 @@ description: MyBlog 系列文章第二篇，如何将hexo项目托管到多个�
 1. 之前已经将代码托管在GitHub的，可以直接在Coding上克隆GitHub的仓库：
    ![Coding](https://cdn.gongsir.club/blog/img/20201222120853.png)
 2. 修改本地git的config，将coding的url加入git配置：
-   ```bash
+   ```sh
    git remote set-url -add origin https://e.coding.net/xxx.git
    ```
    查看remote信息，此时应该包含两个push仓库，以后oush代码的时候，会同时push到github和coding：
@@ -103,7 +103,7 @@ description: MyBlog 系列文章第二篇，如何将hexo项目托管到多个�
   - 在`.ssh/`目录下新建config文件，配置不同平台的ssh公钥：
     ![.ssh目录](https://cdn.gongsir.club/blog/img/20201222122841.png)
     config文件内容如下：
-    ```bash
+    ```sh
     # github
     Host github.com
     HostName github.com

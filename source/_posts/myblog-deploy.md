@@ -50,7 +50,7 @@ description: MyBlog 系列文章第三篇，将hexo项目通过Coding平台持�
 ![22RpeXuR](https://cdn.gongsir.club/blog/image/2021/01/22RpeXuR.png)
 
 6. 编写Jenkinsfile:
-    ```shell
+    ```sh
     pipeline {
     agent any
     stages {
