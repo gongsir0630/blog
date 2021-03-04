@@ -1,5 +1,5 @@
 <h1 align="center"> 码之泪殇 </h1>
-<p align="center"> 用我的指尖实现我的技术 </p>
+<p align="center"> 用我的指尖实现我的技术梦 </p>
 
 ## :pencil:关于内容
 
