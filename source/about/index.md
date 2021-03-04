@@ -9,7 +9,7 @@ categories:
 description: 第一天，先从认识我开始吧😁
 ---
 
-hello，你好👋，很开心得到你的认可，既然来了，请允许我向你做一下自我介绍～
+Hello，你好👋，很开心得到你的认可，既然来了，请允许我向你做一下自我介绍～
 
 <!-- more -->
 
@@ -40,3 +40,15 @@ hello，你好👋，很开心得到你的认可，既然来了，请允许我�
 ### 💻座右铭
 
 用我的指尖实现我的技术梦
+
+### :link: 个人相关链接
+
+* [码之泪殇✨GitHub](https://github.com/gongsir0630)
+* [码之泪殇✨个人主页](https://gongsir.club)
+* [码之泪殇✨个人博客](https://blog.gongsir.club)
+* [码之泪殇✨CSDN](https://blog.csdn.net/qq_41337581)
+
+### :phone:联系我
+
+如对博客内容，知识，开源项目等有疑问或者建议，欢迎邮件和我联系
+**邮箱:gongsir0630@gmail.com**
