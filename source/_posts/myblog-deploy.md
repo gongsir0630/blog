@@ -54,10 +54,8 @@ description: MyBlog 系列文章第三篇，将hexo项目通过Coding平台持�
     pipeline {
     agent any
     stages {
-        ## 第一步:从代码仓库拉取代码
         stage('检出') {
         steps {
-            ## 从Coding平台拉取代码必须这样写,如果是GitHub平台的代码,可以直接写git clone ~
             checkout([
             $class: 'GitSCM', branches: [[name: env.GIT_BUILD_REF]],
             userRemoteConfigs: [[
@@ -65,50 +63,69 @@ description: MyBlog 系列文章第三篇，将hexo项目通过Coding平台持�
                 credentialsId: env.CREDENTIALS_ID
             ]]
             ])
-            ## 项目包含主题子模块,必须拉取子模块,否则主题不会生效
+            sh 'ls -la'
             sh 'git submodule init'
             sh 'git submodule update'
         }
         }
-        ## 第二步:构建Hexo项目,将Hexo项目打包成Public静态资源
         stage('构建') {
         steps {
             echo '构建中...'
             sh '''pwd
-            node -v
-            npm install -g hexo-cli
-            npm install'''
-            npmAuditInDir(directory: '/', collectResult: true)
-            sh '''pwd
+                node -v
+                npm install -g hexo-cli
+                npm install'''
+                        npmAuditInDir(directory: '/', collectResult: true)
+                        sh '''pwd
                 hexo clean
                 hexo generate'''
+            sh 'tar -zcf /tmp/tmp.tar.gz public/'
             echo '构建完成.'
         }
         }
-        ## 第三步:测试是否生成public/文件夹
         stage('测试') {
         steps {
             sh '''ls -lh public/
-                if [ ! -s public/index.html ]
-                then
+                    if [ ! -s public/index.html ]
+                    then
                     exit 1
-                fi'''
+                    fi'''
         }
         }
-        ## 第四步:将pulic文件夹下的内容上传到自己的云服务器,这里使用sshpass工具
         stage('部署') {
         steps {
             echo '部署中...'
-            ## 将密码等隐私信息配置成环境变量
-            sh 'sshpass -p ${SSH_PASS} scp -r public/ ${SSH_USER}@${SSH_HOST}:/www/wwwroot/'
+            script {
+            def remote = [:]
+            remote.name = 'aliyun-server'
+            remote.allowAnyHosts = true
+            remote.host = 'gongsir.club'
+            remote.port = 22
+            remote.user = 'root'
+
+            // 把「CODING 凭据管理」中的「凭据 ID」填入 credentialsId，而 username 和 password 无需修改
+            withCredentials([usernamePassword(credentialsId: "1f981c07-2c51-4a64-a93b-be09ba76a406", usernameVariable: 'username', passwordVariable: 'password')]) {
+                remote.user = username
+                remote.password = password
+
+                // SSH 上传文件到远端服务器
+                sshPut remote: remote, from: '/tmp/tmp.tar.gz', into: '/tmp/'
+                // 解压缩
+                sshCommand remote: remote, command: "tar -zxf /tmp/tmp.tar.gz -C /tmp/"
+                sshCommand remote: remote, sudo: true, command: "mkdir -p /www/wwwroot/blog.gongsir.club"
+                sshCommand remote: remote, sudo: true, command: "cp -R /tmp/public/* /www/wwwroot/blog.gongsir.club/"
+                // 重启 nginx
+                sshCommand remote: remote, sudo: true, command: "nginx -s reload"
+            }
+            }
             echo '部署完成'
         }
         }
     }
     }
     ```
-    设置隐私数据环境变量:
-    ![22gOdKXI](https://cdn.gongsir.club/blog/image/2021/01/22gOdKXI.png)
+    「CODING 凭据管理」中的「凭据 ID」:
+    ![凭据ID设置](https://cdn.gongsir.club/blog/image/2021/03/19fDIDPk.png)
 
 7. 设置触发规则,设置代码更新到制定分支时自动触发:
 ![22TkLg3F](https://cdn.gongsir.club/blog/image/2021/01/22TkLg3F.png)
@@ -118,3 +135,7 @@ description: MyBlog 系列文章第三篇，将hexo项目通过Coding平台持�
 
 9. 看成果:
 ![自动部署展示](https://cdn.gongsir.club/blog/gif/myblog-deploy-show.gif)
+
+## 参考文档
+- [快速开始持续集成](https://help.coding.net/docs/ci/start.html)
+- [自动部署到Linux服务器](https://help.coding.net/docs/ci/deploy/ssh.html)

@@ -78,7 +78,7 @@ description: MyBlog 系列文章第二篇，如何将hexo项目托管到多个�
 
 这种方式有一些小问题：
 - GitHub国内访问速度感人
-- `.config.yml`需要配置[hexo-deploy]()
+- `.config.yml`需要配置[hexo-deploy](https://github.com/hexojs/hexo-deployer-git)
 - 每次博客更新都需要手动部署
 - 综上，个人觉得还是比较麻烦
 
