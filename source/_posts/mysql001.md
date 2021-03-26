@@ -8,6 +8,7 @@ tags:
     - MySQL
 categories:
     - 原创
+    - 后端
 description: mysql安装完成后修改密码、配置远程连接、新建用户、修改授权等操作.
 ---
 
