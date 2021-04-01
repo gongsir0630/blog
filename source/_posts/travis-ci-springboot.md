@@ -5,7 +5,10 @@ auto_excerpt: true
 toc: true
 date: 2021-04-02 00:25:55
 tags:
+  - Travis CI
 categories:
+  - 原创
+  - 后端
 description: 最近整理 Github 项目，就想着体验一下使用 Travis CI 来实现项目的 CI，折腾了一天，无奈国内 Travis 文档稀缺，踩了很多坑，所以才来写了这篇文章，希望和同学们相互分享、学习！
 ---
 ## 前言
