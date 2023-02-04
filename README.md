@@ -1,11 +1,11 @@
-<h1 align="center"> 码之泪殇 </h1>
+<h1 align="center"> 程序员Kyle✨ </h1>
 <p align="center"> 用我的指尖实现我的技术梦 </p>
 
 ## :pencil:关于内容
 
-Hello👋，我是[码之泪殇](https://gongsir.club)，这里是我写博客的地方~
+Hello👋，我是[程序员Kyle✨](https://gongsir.club)，这里是我写博客的地方~
 
-博客([码之泪殇|技术博客](https://blog.gongsir.club))基于Hexo搭建, 代码托管在GitHub和Coding, 部署在阿里云服务器, 其中部署是基于Coding提供的持续集成.
+博客([程序员Kyle✨|技术博客](https://blog.gongsir.club))基于Hexo搭建, 代码托管在GitHub和Coding, 部署在阿里云服务器, 其中部署是基于Coding提供的持续集成.
 
 ### 发布博客 ✍️
 
@@ -24,10 +24,10 @@ Hello👋，我是[码之泪殇](https://gongsir.club)，这里是我写博客�
 
 ## :link:个人相关链接
 
-* [码之泪殇✨个人主页](https://gongsir.club)
+* [程序员Kyle✨✨个人主页](https://gongsir.club)
 * [gongsir0630✨GitHub](https://github.com/gongsir0630)
-* [码之泪殇✨个人博客](https://blog.gongsir.club)
-* [码之泪殇✨CSDN](https://blog.csdn.net/qq_41337581)
+* [程序员Kyle✨✨个人博客](https://blog.gongsir.club)
+* [程序员Kyle✨✨CSDN](https://blog.csdn.net/qq_41337581)
 
 ## :phone:联系我
 如对博客内容，知识，开源项目等有疑问或者建议，欢迎邮件和我联系

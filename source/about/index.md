@@ -13,7 +13,7 @@ Hello，你好👋，很开心得到你的认可，既然来了，请允许我�
 
 <!-- more -->
 
-码之泪殇，98年出生，Java后端程序员一枚,目前大四在读([西南石油大学](https://www.swpu.edu.cn))
+程序员Kyle✨，98年出生，Java后端程序员一枚,目前大四在读([西南石油大学](https://www.swpu.edu.cn))
 即将就职于 ✨快手✨
 - 喜欢钻研新的知识、技术，同时热爱开源、创作、分享
 - 游戏：王者荣耀 - 🔪打野
@@ -23,8 +23,8 @@ Hello，你好👋，很开心得到你的认可，既然来了，请允许我�
 
 ### ✏️名字
 
-我 -> 码之泪殇，关于名字，不知你可听说过<font color=#f39c12> [梦之泪伤] </font>这个人？对，没错，我也喜欢玩《王者荣耀》这款🎮，很喜欢梦老师，村服第一镜
-自己喜欢写代码，因此给自己取名 ——> 👉码之泪殇👈
+我 -> 程序员Kyle✨，关于名字，不知你可听说过<font color=#f39c12> [梦之泪伤] </font>这个人？对，没错，我也喜欢玩《王者荣耀》这款🎮，很喜欢梦老师，村服第一镜
+自己喜欢写代码，因此给自己取名 ——> 👉程序员Kyle✨👈
 
 ### ✨当下
 
@@ -43,10 +43,10 @@ Hello，你好👋，很开心得到你的认可，既然来了，请允许我�
 
 ### 🔗个人相关链接
 
-* [码之泪殇✨GitHub](https://github.com/gongsir0630)
-* [码之泪殇✨个人主页](https://gongsir.club)
-* [码之泪殇✨个人博客](https://blog.gongsir.club)
-* [码之泪殇✨CSDN](https://blog.csdn.net/qq_41337581)
+* [程序员Kyle✨✨GitHub](https://github.com/gongsir0630)
+* [程序员Kyle✨✨个人主页](https://gongsir.club)
+* [程序员Kyle✨✨个人博客](https://blog.gongsir.club)
+* [程序员Kyle✨✨CSDN](https://blog.csdn.net/qq_41337581)
 
 ### 📮联系我
 

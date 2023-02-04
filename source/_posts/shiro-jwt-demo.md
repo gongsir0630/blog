@@ -298,7 +298,7 @@ wx:
 
 ```java
 /**
- * @author gongsir <a href="https://github.com/gongsir0630">码之泪殇</a>
+ * @author gongsir <a href="https://github.com/gongsir0630">程序员Kyle✨</a>
  * 描述: Spring Boot 工程启动类,可以直接点击下面的main方法运行程序
  */
 
@@ -334,7 +334,7 @@ public class ShiroJwtDemoApplication {
 
 ```java
 /**
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/20 14:15
  * 你的指尖,拥有改变世界的力量
  * 描述: Redis配置
@@ -354,7 +354,7 @@ public class RedisConfig {
 
 ```java
 /**
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/20 14:10
  * 你的指尖,拥有改变世界的力量
  * 描述: RestTemplate的配置类
@@ -384,7 +384,7 @@ public class RestTemplateConfig {
 
 ```java
 /**
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/22 20:17
  * 你的指尖,拥有改变世界的力量
  * 描述: code和msg封装
@@ -429,7 +429,7 @@ public class CodeMsg {
 
 ```java
 /**
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/20 18:45
  * 你的指尖,拥有改变世界的力量
  * 描述:
@@ -500,7 +500,7 @@ public class Result<T> {
 import com.github.gongsir0630.shirodemo.controller.res.CodeMsg;
 
 /**
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/22 20:24
  * 你的指尖,拥有改变世界的力量
  * 描述: 自定义异常, 用于处理Api认证失败异常信息保存
@@ -530,7 +530,7 @@ public class ApiAuthException extends RuntimeException {
 
 ```java
 /**
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/20 15:49
  * 你的指尖,拥有改变世界的力量
  * 描述: 全局异常处理
@@ -576,7 +576,7 @@ public class AppExceptionHandler {
 
 ```java
 /**
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/21 23:44
  * 你的指尖,拥有改变世界的力量
  * 描述: 业务用户信息
@@ -601,7 +601,7 @@ public class User {
 
 ```java
 /**
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/22 19:44
  * 你的指尖,拥有改变世界的力量
  * 描述: User类mapper接口,继承自BaseMapper(已经实现User的CRUD)
@@ -614,7 +614,7 @@ MyBatis-Plus配置 -> **MybatisPlusConfig.java**
 
 ```java
 /**
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/19 17:15
  * 你的指尖,拥有改变世界的力量
  * 描述: MyBatis-Plus插件配置
@@ -629,7 +629,7 @@ public class MybatisPlusConfig {
 
 ```java
 /**
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/22 19:49
  * 你的指尖,拥有改变世界的力量
  * 描述: 用户接口
@@ -646,7 +646,7 @@ public interface UserService extends IService<User> {
 再创建一个微信登录信息对象，主要用作接收微信的openid和session_key，以及用作shiro认证 -> **WxAccount.java**
 
 ```java
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/22 19:58
  * 你的指尖,拥有改变世界的力量
  * 描述: 微信认证信息
@@ -665,7 +665,7 @@ public class WxAccount {
 微信登录接口，在这里实现与微信服务器的信息交互 -> **WxAccountService.java**
 
 ```java
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/22 20:06
  * 你的指尖,拥有改变世界的力量
  * 描述: 微信接口
@@ -694,7 +694,7 @@ public interface WxAccountService {
 
 ```java
 /**
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/20 16:12
  * 你的指尖,拥有改变世界的力量
  * 描述: 微信接口实现: 用 restTemplate 调用 [wxApp] 应用的接口
@@ -745,7 +745,7 @@ jwt工具类，用于生成token签名, token校验 -> **JwtUtil.java**
 
 ```java
 /**
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/23 10:26
  * 你的指尖,拥有改变世界的力量
  * 描述: jwt工具类: 生成token签名, token校验
@@ -843,7 +843,7 @@ public class JwtUtil {
 
 ```java
 /**
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/23 10:48
  * 你的指尖,拥有改变世界的力量
  * 描述: 鉴权用的token，需要实现 AuthenticationToken
@@ -890,7 +890,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/23 15:28
  * 你的指尖,拥有改变世界的力量
  * 描述: Realm 的一个配置管理类 allRealm()方法得到所有的realm
@@ -990,7 +990,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/23 10:58
  * 你的指尖,拥有改变世界的力量
  * 描述: JWT核心过滤器配置
@@ -1070,7 +1070,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/20 16:48
  * 你的指尖,拥有改变世界的力量
  * 描述: shiro核心配置
@@ -1168,7 +1168,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/23 11:19
  * 你的指尖,拥有改变世界的力量
  * 描述:
@@ -1222,7 +1222,7 @@ import javax.annotation.Resource;
 import java.util.Map;
 
 /**
- * @author 码之泪殇 GitHub: https://github.com/gongsir0630
+ * @author 程序员Kyle✨ GitHub: https://github.com/gongsir0630
  * @date 2021/3/23 11:12
  * 你的指尖,拥有改变世界的力量
  * 描述: 用户信息接口类,包含小程序登录注册

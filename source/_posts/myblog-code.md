@@ -19,7 +19,7 @@ description: MyBlog 系列文章第二篇，如何将hexo项目托管到多个�
 
 ## 系列 📒
 
-我的博客([码之泪殇|技术博客](https://blog.gongsir.club))是基于Hexo搭建的, 代码托管在GitHub和Coding, 部署在阿里云服务器, 其中部署是基于Coding提供的持续集成.
+我的博客([程序员Kyle✨|技术博客](https://blog.gongsir.club))是基于Hexo搭建的, 代码托管在GitHub和Coding, 部署在阿里云服务器, 其中部署是基于Coding提供的持续集成.
 
 ### 发布博客
 
