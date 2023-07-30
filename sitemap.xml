@@ -23,14 +23,14 @@
   </url>
   
   <url>
-    <loc>https://gongsir0630.github.io/blog/link/index.html</loc>
+    <loc>https://gongsir0630.github.io/blog/guestbook/index.html</loc>
     
     <lastmod>2023-07-30</lastmod>
     
   </url>
   
   <url>
-    <loc>https://gongsir0630.github.io/blog/guestbook/index.html</loc>
+    <loc>https://gongsir0630.github.io/blog/archives/index.html</loc>
     
     <lastmod>2023-07-30</lastmod>
     
@@ -51,7 +51,7 @@
   </url>
   
   <url>
-    <loc>https://gongsir0630.github.io/blog/archives/index.html</loc>
+    <loc>https://gongsir0630.github.io/blog/link/index.html</loc>
     
     <lastmod>2023-07-30</lastmod>
     
@@ -65,14 +65,14 @@
   </url>
   
   <url>
-    <loc>https://gongsir0630.github.io/blog/2021/03/07/my-college-days.html</loc>
+    <loc>https://gongsir0630.github.io/blog/2020/12/14/MyBlog-Hexo.html</loc>
     
     <lastmod>2023-07-30</lastmod>
     
   </url>
   
   <url>
-    <loc>https://gongsir0630.github.io/blog/2020/12/14/MyBlog-Hexo.html</loc>
+    <loc>https://gongsir0630.github.io/blog/2021/03/07/my-college-days.html</loc>
     
     <lastmod>2023-07-30</lastmod>
     
@@ -116,13 +116,6 @@
 
   
   <url>
-    <loc>https://gongsir0630.github.io/blog/tags/%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2023-07-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://gongsir0630.github.io/blog/tags/hexo/</loc>
     <lastmod>2023-07-30</lastmod>
     <changefreq>daily</changefreq>
@@ -138,6 +131,13 @@
   
   <url>
     <loc>https://gongsir0630.github.io/blog/tags/MyBlog/</loc>
+    <lastmod>2023-07-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gongsir0630.github.io/blog/tags/%E9%98%85%E8%AF%BB/</loc>
     <lastmod>2023-07-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -181,14 +181,14 @@
   </url>
   
   <url>
-    <loc>https://gongsir0630.github.io/blog/categories/%E5%8E%9F%E5%88%9B/%E7%A8%8B%E5%BA%8F%E5%91%98/</loc>
+    <loc>https://gongsir0630.github.io/blog/categories/%E5%8E%9F%E5%88%9B/%E5%90%8E%E7%AB%AF/</loc>
     <lastmod>2023-07-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://gongsir0630.github.io/blog/categories/%E5%8E%9F%E5%88%9B/%E5%90%8E%E7%AB%AF/</loc>
+    <loc>https://gongsir0630.github.io/blog/categories/%E5%8E%9F%E5%88%9B/%E7%A8%8B%E5%BA%8F%E5%91%98/</loc>
     <lastmod>2023-07-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
