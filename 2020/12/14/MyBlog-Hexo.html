@@ -1,0 +1,601 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+    <link rel="icon" href="https://thirdqq.qlogo.cn/qqapp/1110061270/E0B4163FDCD19C3791B49B64EDB9F688/100">
+  
+  
+      <meta name="author" content="程序员Kyle✨">
+  
+  
+      <meta name="subtitle" content="程序员Kyle✨的个人博客">
+  
+  
+      <meta name="description" content="程序员Kyle✨的个人博客,记录随笔与学习笔记，Java后端相关的知识，个人面经等">
+  
+  
+      <meta name="keywords" content=",程序员Kyle✨">
+  
+  
+    <link rel="alternate" href="/blog/atom.xml " title="程序员Kyle✨｜个人博客" type="application/atom+xml">
+  
+
+  
+
+  <title>1️⃣MyBlog-Hexo搭建自己的博客 | 程序员Kyle✨｜个人博客</title>
+
+  
+
+  
+
+  
+      
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+  
+
+  <link rel="stylesheet" href="/blog/css/style.css" >
+  <link rel="stylesheet" href="/blog/css/partial/dark.css" >
+
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&amp;display=swap"  media="print" onload="this.media='all'">
+  
+  
+  
+
+  
+    
+      <link rel="stylesheet" href="/blog/css/partial/highlight/atom-one-light.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/css/iconfont.css">
+    
+  
+
+  
+    <script src="/blog/js/todark.js"></script>
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+</html>
+    
+<div class="nav index" style="height: 60px;">
+    <div class="title animated fadeInDown">
+        <div class="layui-container">
+                <div class="nav-title"><a href="/blog/" title="程序员Kyle✨｜个人博客">程序员Kyle✨｜个人博客</a></div>
+            <div class="nav-list">
+                <button> <span class=""></span><span style="display: block;"></span><span class=""></span> </button>
+                <ul class="layui-nav" lay-filter="">
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/search/ ">
+                            <i class=" fas fa-search-plus " style="color: rgb(3 169 244);"></i>
+                            <span class="layui-nav-item-name">搜索</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/ ">
+                            <i class=" fab fa-fort-awesome " style="color: rgb(255 107 107);"></i>
+                            <span class="layui-nav-item-name">首页</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/archives/ ">
+                            <i class=" fas fa-archive " style="color: rgb(10 189 227);"></i>
+                            <span class="layui-nav-item-name">时间线</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/tags/ ">
+                            <i class=" fas fa-hashtag " style="color: rgb(254 202 87);"></i>
+                            <span class="layui-nav-item-name">标签</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/categories ">
+                            <i class=" far fa-folder-open " style="color: rgb(29 209 161);"></i>
+                            <span class="layui-nav-item-name">分类</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/about/ ">
+                            <i class=" fab fa-grav " style="color: rgb(154 106 247);"></i>
+                            <span class="layui-nav-item-name">关于</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/guestbook/ ">
+                            <i class=" fab fa-telegram " style="color: hsl(205deg 100% 50%);"></i>
+                            <span class="layui-nav-item-name">留言</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/link/ ">
+                            <i class=" fab fa-weixin " style="color: hsl(152deg 73% 45%);"></i>
+                            <span class="layui-nav-item-name">友链</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/shuoshuo/ ">
+                            <i class=" fas fa-coffee " style="color:#31c7c1;"></i>
+                            <span class="layui-nav-item-name">说说</span>
+                        </a>
+                    </li>
+                    
+                    
+                        <li class="layui-nav-item" id="btn-toggle-dark">🌙</li>
+                    
+                    <span class="layui-nav-bar" style="left: 342px; top: 78px; width: 0px; opacity: 0;"></span>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<header class="header">
+        
+            <div class="logo">
+                    <a href="/blog/"><img src="https://thirdqq.qlogo.cn/qqapp/1110061270/E0B4163FDCD19C3791B49B64EDB9F688/100" onerror=this.onerror=null,this.src="/blog/img/loading.gif"></a>
+            </div>
+         
+    </div>
+     
+
+            <div class="motto">
+                <span>用我的指尖实现我的技术梦</span>
+            </div>
+    
+    
+            <div class="social">
+                
+                        <a class="social-icon" href="https://github.com/gongsir0630" target="_blank" title="Github">
+                            <i class="iconfont icon-GitHub" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="mailto:gongsir0630@gmail.com" target="_blank" title="Email">
+                            <i class="iconfont icon-email" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="https://space.bilibili.com/277602309" target="_blank" title="Bilibili">
+                            <i class="iconfont icon-bilibili" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="/atom.xml" target="_blank" title="rss">
+                            <i class="iconfont icon-rss" aria-hidden="true"></i>
+                          </a>
+                 
+            </div>
+     
+</header>
+
+    
+<article id="post">
+  <div class="post-title">1️⃣MyBlog-Hexo搭建自己的博客</div>
+  
+<div class="post-meta">
+    
+      <div class="post-meta-item top">
+        <i class="far fa-bookmark"></i>
+        <span class="sticky">置顶</span>
+      </div>
+    
+    
+      <div class="post-meta-item date">
+        <span title="发表于 2020.12.14"><i class="far fa-calendar-alt"></i> 2020.12.14</span>
+      </div>
+      <div class="post-meta-item updated">
+        <span title="更新于 2023.07.30"><i class="far fa-calendar-check"></i> 2023.07.30</span>
+      </div>
+     
+    
+      <div class="post-meta-item categories">
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/blog/categories/%E5%8E%9F%E5%88%9B/">原创</a>
+        
+      </div>
+     
+    
+     <div class="post-meta-item wordcount">
+        
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">1.3k 字</span>
+           
+        
+          <i class="far fa-clock"></i> <span class="post-count">5 分钟</span>
+                               
+      </div>
+     
+</div>
+
+
+  
+    <div id="toc" class="toc">
+          <h1>目录</h1>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E5%88%97-%F0%9F%93%92"><span class="toc-number">1.</span> <span class="toc-text">系列 📒</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2"><span class="toc-number">1.1.</span> <span class="toc-text">发布博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95"><span class="toc-number">1.2.</span> <span class="toc-text">系列文章目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8EHexo"><span class="toc-number">2.</span> <span class="toc-text">关于Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Git-Node"><span class="toc-number">3.</span> <span class="toc-text">安装Git | Node</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Hexo"><span class="toc-number">4.</span> <span class="toc-text">安装Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B-%E2%9C%A8"><span class="toc-number">5.</span> <span class="toc-text">开始 ✨</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83"><span class="toc-number">5.1.</span> <span class="toc-text">基础环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE"><span class="toc-number">5.2.</span> <span class="toc-text">主题配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E5%88%9B%E4%BD%9C"><span class="toc-number">5.3.</span> <span class="toc-text">开始创作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2"><span class="toc-number">5.4.</span> <span class="toc-text">博客部署</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="toc-number">6.</span> <span class="toc-text">参考文档</span></a></li></ol>
+      </div>
+    
+  <div class="content">
+        <div><p><strong>MyBlog</strong> 系列文章之一, 这篇文章, 介绍如何使用<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a>搭建博客环境, 以及Hexo的基本用法.</p>
+<a id="more"></a>
+
+<h2 id="系列-📒"><a href="#系列-📒" class="headerlink" title="系列 📒"></a>系列 📒</h2><p>我的博客(<a target="_blank" rel="noopener" href="https://blog.gongsir.club/">程序员Kyle✨|技术博客</a>)是基于Hexo搭建的, 代码托管在GitHub和Coding, 部署在阿里云服务器, 其中部署是基于Coding提供的持续集成.</p>
+<h3 id="发布博客"><a href="#发布博客" class="headerlink" title="发布博客"></a>发布博客</h3><p>在本地编写 Markdown 文件, 然后将代码push到托管平台, 即可自动触发持续集成, 将网页部署到云服务器, 全自动~</p>
+<h3 id="系列文章目录"><a href="#系列文章目录" class="headerlink" title="系列文章目录"></a>系列文章目录</h3><ol>
+<li><a href="/2020/12/14/MyBlog-Hexo/">MyBlog-Hexo搭建自己的博客</a></li>
+<li><a href="/2020/12/20/myblog-code.html">MyBlog-多平台代码托管</a></li>
+<li><a href="/2021/01/22/myblog-deploy.html">MyBlog-Hexo项目持续集成发布</a><hr>
+
+</li>
+</ol>
+<h2 id="关于Hexo"><a href="#关于Hexo" class="headerlink" title="关于Hexo"></a>关于Hexo</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a target="_blank" rel="noopener" href="https://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。<br>Hexo官网: <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a><br></p>
+<h2 id="安装Git-Node"><a href="#安装Git-Node" class="headerlink" title="安装Git | Node"></a>安装Git | Node</h2><ol>
+<li>本地环境: 我用的是Mac, 以下所有操作都是基于 MacOS 系统, 关于其他平台软件安装, 大同小异.<br></li>
+<li>安装 Hexo 相当简单，只需要先安装下列应用程序即可:<ul>
+<li><a target="_blank" rel="noopener" href="http://nodejs.org/">Node.js</a> (Node.js 版本需不低于 10.13，建议使用 Node.js 12.0 及以上版本)</li>
+<li><a target="_blank" rel="noopener" href="http://git-scm.com/">Git</a></li>
+</ul>
+</li>
+<li>MacOS使用 brew|brewcask 安装非常简单, 这里不做赘述, 其他系统也可去某度搜索, 安装很easy的~<br></li>
+</ol>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><ol>
+<li>打开终端, 创建个人博客存放目录(eg: blog.gongsir.club):  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> blog.gongsir.club</span><br></pre></td></tr></table></figure>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog.gongsir.club</span><br></pre></td></tr></table></figure></li>
+<li>终端执行 Hexo 安装命令: <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
+<li>终端输入以下命令查看hexo信息，成功即可： <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="开始-✨"><a href="#开始-✨" class="headerlink" title="开始 ✨"></a>开始 ✨</h2><h3 id="基础环境"><a href="#基础环境" class="headerlink" title="基础环境"></a>基础环境</h3><p>接下来就可以开始使用hexo搭建一个 “Hello World” 页面了。</p>
+<ol>
+<li>使用hexo的hello-world初始化你的博客（此时会自动使用Git克隆项目）： <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></li>
+<li>安装hexo所需依赖： <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
+<li>启动，预览：<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>成功看到Hexo的Hello——World页面即表示Hexo建站成功，但是似乎UI不太喜欢，想改下主题，所以后续来了！！！</p>
+<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><ol>
+<li><p>我尝试过很多主题，在hexo的主题官网有很多themes，但是感觉都不是我想要的，最后在github上发现了一款不错的主题——<a target="_blank" rel="noopener" href="https://github.com/a2396837/hexo-theme-blank">hexo-theme-blank</a></p>
+<ul>
+<li>GitHub: <a target="_blank" rel="noopener" href="https://github.com/a2396837/hexo-theme-blank">https://github.com/a2396837/hexo-theme-blank</a></li>
+<li>Theme配置文档（很详细）： <a target="_blank" rel="noopener" href="https://dmx.pub/">https://dmx.pub/</a></li>
+</ul>
+</li>
+<li><p>主题安装这里需要注意一下，假设我们希望将整个博客文件放在Github进行托管，而我们安装主题时通常是直接在themes文件夹下克隆主题仓库：</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/a2396837/hexo-theme-blank.git blank</span><br></pre></td></tr></table></figure>
+<p> 当我们修改了我们的博客内容，向github提交代码的时候，就会出现冲突，因为我们的themes/blank包含在博客目录下（即git工程包含了git工程），解决这个问题最简单的方法就是将themes/blank下的<code>.git</code>文件夹删除，此时themes/blank就是一个普通文件夹，博客项目就可以直接push到github。</p>
+<p> 但是我们考虑到主题在今后可能会有升级的情况，主题目录使用<code>git pull</code>即可完成升级，因此就不能删除主题目录的<code>.git</code>，建议使用<strong>Git子模块</strong>对整个项目进行代码托管：<br> 在博客根目录执行：</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 下载主题</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/a2396837/hexo-theme-blank.git themes/blank</span><br><span class="line"><span class="comment">## 将主题文件夹添加为git子模块</span></span><br><span class="line">git submodule add https://github.com/a2396837/hexo-theme-blank.git themes/blank</span><br></pre></td></tr></table></figure>
+<p> 之后我们的博客根目录就会自动生成一个<code>.gitmodules</code>的文件，记录了子模块的信息，接下来我们正常操作父项目就可以了，想学习更多关于<code>git子模块</code>的知识，可以去官网学学~</p>
+</li>
+<li><p>为了主题在今后能够进行平滑升级，我们不要在主题文件夹直接修改配置，解决方法是将主题中的<code>._config.yml</code>拷贝到博客根目录的<code>source/_data</code>（需要自己新建<code>_data</code>）目录下，并重命名为<code>blank.yml</code>，然后在<code>blank.yml</code>进行主题配置:</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> <span class="built_in">source</span>/_data</span><br><span class="line"><span class="built_in">cp</span> -p themes/blank/_config.yml <span class="built_in">source</span>/_data/blank.yml</span><br></pre></td></tr></table></figure>
+<h3 id="开始创作"><a href="#开始创作" class="headerlink" title="开始创作"></a>开始创作</h3></li>
+<li><p>hexo可以直接解析md文档，我们只需新建一个md，然后编辑md即可：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;blog-title&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>以上会在<code>source/_post</code>目录下生成一个名叫“blog-title”的md文件，使用<code>vscode</code>编辑：<br><img src= "/blog/img/loading.gif" data-src="https://cdn.gongsir.club/blog/img/2020-12-17-1.png" alt="vscode编写md"></p>
+</li>
+<li><p>生成静态网页文件：使用hexo的命令将md和主题样式解析成html文件，并保存在<code>public/</code>下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></li>
+<li><p>运行方式：</p>
+<ol>
+<li>因为生成的是静态html，因此可以直接打开<code>public/</code>，双击<code>index.html</code>运行；</li>
+<li>使用<code>hexo s | hexo s --debug (debug模式)</code>.</li>
+</ol>
+</li>
+</ol>
+<h3 id="博客部署"><a href="#博客部署" class="headerlink" title="博客部署"></a>博客部署</h3><p>将生成的<code>public/</code>目录下的静态文件（html、csss、js等）直接部署到你的服务器（可以使用scp、ftp等服务），再配置nginx即可访问.<br><br>但是这样很麻烦，每次写一篇，都需要以下步骤：</p>
+<ol>
+<li><code>hexo clean</code>: 清除<code>public/</code>缓存;</li>
+<li><code>hexo g</code>: 重新生成静态文件；</li>
+<li>手动部署到你的服务器.</li>
+</ol>
+<p>其实我们不用这么麻烦，当我们写完一篇博客之后，直接将代码push到托管平台，之后就可以自动解析、自动部署.如何实现? 看后续… …</p>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
+<li>Hexo官方文档：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">这里可以从零开始学习hexo</a></li>
+<li>hexo-theme-blank：<a target="_blank" rel="noopener" href="https://dmx.pub/">这里可以学习hexo-theme-blank的详细配置</a></li>
+</ul>
+<hr></div>
+        
+  </div>
+
+    <div class="post_tags">
+      
+        <i class="fas fa-tag"></i> <a href="/blog/tags/hexo/" class="tag">hexo</a>
+      
+        <i class="fas fa-tag"></i> <a href="/blog/tags/hexo-theme-blank/" class="tag">hexo-theme-blank</a>
+      
+        <i class="fas fa-tag"></i> <a href="/blog/tags/MyBlog/" class="tag">MyBlog</a>
+      
+    </div>
+    <div class="post-nav">
+      
+        <div class="post-nav-prev post-nav-item">
+            <a href="/blog/2020/12/20/myblog-code.html" >2️⃣MyBlog-多平台代码托管<i class="fa fa-chevron-left"></i></a>
+        </div>
+      
+      
+    </div>
+      
+
+
+
+  <div id="valine"></div>
+  <script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  <script>
+        new Valine({
+          el: '#valine',
+          appId: "7sd5RvAKvPf0dty5f4QfFL7R-gzGzoHsz",
+          appKey: "gjLXJe9CumUibqTPtE6TmIQn",
+          avatar: "robohash",
+          lang: "",
+          meta: 'nick,mail,link'.split(','),
+          requiredFields: 'nick,mail'.split(','),
+          placeholder: "评论记得带上邮箱,你的留言我会马上收到邮箱提醒哒",
+          pageSize:'10',
+          recordIP: 'false',
+          serverURLs: "https://blog.gongsir.club",
+          emojiCDN: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/",
+          enableQQ: "true",
+        });
+  </script>
+  
+
+</article>
+
+    
+<a id="gotop" href="javascript:" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    
+
+
+
+
+
+
+    
+<div id="bottom-outer">
+    <div id="bottom-inner">
+        © 2020 <i class="fa fa-heart" id="heart"></i> 程序员Kyle✨ 
+        <br>
+        Powered by 
+        <a target="_blank" rel="noopener" href="http://hexo.io">hexo</a> | Theme is <a target="_blank" rel="noopener" href="https://github.com/a2396837/hexo-theme-blank/">blank</a>
+        
+          <div class="icp-info">
+            
+            <img  class="icp-icon" src="/img/icp.png">
+            
+          <a href="http://www.beian.miit.gov.cn/" target="_blank"> 蜀ICP备19016450号</a>
+        </div>
+        
+    </div>  
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/layui-src@2.5.5/dist/layui.min.js"></script>
+
+
+
+  
+    <script src="/blog/js/script.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+  
+
+ 
+
+  <script src="/blog/js/local-search.js"></script>
+<script type="text/javascript">      
+  var search_path = "search.xml";
+if (search_path.length == 0) {
+  search_path = "search.xml";
+}
+var path = "/blog/" + search_path;
+  searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
+  
+
+
+  <script>
+    window.lazyLoadOptions = {
+      elements_selector: 'img',
+      threshold: 0
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script>   
+  
+
+
+  <script>
+    var images = $('img').not('.nav-logo img').not('.card img').not($('a>img')).not('.reward-content img')
+    images.each(function (i, o) {
+      var lazyloadSrc = $(o).attr('data-src') ? $(o).attr('data-src') : $(o).attr('src')
+      $(o).wrap(`<a href="${lazyloadSrc}" data-fancybox="group" data-caption="${$(o).attr('alt')}" class="fancybox"></a>`)
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script>
+  <script>
+        $().fancybox({
+      selector: '[data-fancybox]',
+      loop: true,
+      transitionEffect: 'slide',
+      protect: true,
+      buttons: ['slideShow', 'fullScreen', 'thumbs', 'close']
+    })
+  </script>   
+  
+
+
+  <script>
+  if (!window.MathJax) {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]],
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+              const display = !!node.type.match(/; *mode=display/)
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+              const text = document.createTextNode('')
+              node.parentNode.replaceChild(text, node)
+              math.start = {node: text, delim: '', n: 0}
+              math.end = {node: text, delim: '', n: 0}
+              doc.math.push(math)
+            }
+          }, '']
+        }
+      }
+    }
+    
+    var script = document.createElement('script')
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"
+    script.id = 'MathJax-script'
+    script.async = true
+    document.head.appendChild(script)
+  } else {
+    MathJax.startup.document.state(0)
+    MathJax.texReset()
+    MathJax.typeset()
+  }
+  </script>
+  
+
+
+  
+<script>
+if (document.getElementsByClassName('mermaid').length) {
+    if (window.mermaidJsLoad) mermaid.init()
+    else {
+      $.getScript("https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js", function () {
+        window.mermaidJsLoad = true
+        mermaid.initialize({
+          theme: "default",
+        })
+      })
+    }
+  }
+  </script>
+  
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script>
+  
+
+
+  <script src="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/js/firework.js"></script>
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js"></script>
+<script>
+!function (e, t, a) {
+  var initCopyCode = function(){
+    var copyHtml = '';
+    copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+    copyHtml += '  <i class="fa fa-clipboard"></i><span>复制</span>';
+    copyHtml += '</button>';
+    $(".highlight .code pre").before(copyHtml);
+    new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+  }
+  initCopyCode();
+}(window, document);
+</script>  
+  
+
+<script>
+  var btntop = $('#gotop');
+  btntop.on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, '300');
+  });
+
+  var $table = $('.content table').not($('figure.highlight > table'))
+$table.each(function () {
+  $(this).wrap('<div class="table-wrap"></div>')
+})
+</script>
+
+
+
+</html>

@@ -1,0 +1,663 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+    <link rel="icon" href="https://thirdqq.qlogo.cn/qqapp/1110061270/E0B4163FDCD19C3791B49B64EDB9F688/100">
+  
+  
+      <meta name="author" content="程序员Kyle✨">
+  
+  
+      <meta name="subtitle" content="程序员Kyle✨的个人博客">
+  
+  
+      <meta name="description" content="程序员Kyle✨的个人博客,记录随笔与学习笔记，Java后端相关的知识，个人面经等">
+  
+  
+      <meta name="keywords" content=",程序员Kyle✨">
+  
+  
+    <link rel="alternate" href="/blog/atom.xml " title="程序员Kyle✨｜个人博客" type="application/atom+xml">
+  
+
+  
+
+  <title>使用 Travis 打造 SpringBoot 应用持续集成和自动部署 | Travis CI 初体验 | 程序员Kyle✨｜个人博客</title>
+
+  
+
+  
+
+  
+      
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+  
+
+  <link rel="stylesheet" href="/blog/css/style.css" >
+  <link rel="stylesheet" href="/blog/css/partial/dark.css" >
+
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&amp;display=swap"  media="print" onload="this.media='all'">
+  
+  
+  
+
+  
+    
+      <link rel="stylesheet" href="/blog/css/partial/highlight/atom-one-light.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/css/iconfont.css">
+    
+  
+
+  
+    <script src="/blog/js/todark.js"></script>
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+</html>
+    
+<div class="nav index" style="height: 60px;">
+    <div class="title animated fadeInDown">
+        <div class="layui-container">
+                <div class="nav-title"><a href="/blog/" title="程序员Kyle✨｜个人博客">程序员Kyle✨｜个人博客</a></div>
+            <div class="nav-list">
+                <button> <span class=""></span><span style="display: block;"></span><span class=""></span> </button>
+                <ul class="layui-nav" lay-filter="">
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/search/ ">
+                            <i class=" fas fa-search-plus " style="color: rgb(3 169 244);"></i>
+                            <span class="layui-nav-item-name">搜索</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/ ">
+                            <i class=" fab fa-fort-awesome " style="color: rgb(255 107 107);"></i>
+                            <span class="layui-nav-item-name">首页</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/archives/ ">
+                            <i class=" fas fa-archive " style="color: rgb(10 189 227);"></i>
+                            <span class="layui-nav-item-name">时间线</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/tags/ ">
+                            <i class=" fas fa-hashtag " style="color: rgb(254 202 87);"></i>
+                            <span class="layui-nav-item-name">标签</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/categories ">
+                            <i class=" far fa-folder-open " style="color: rgb(29 209 161);"></i>
+                            <span class="layui-nav-item-name">分类</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/about/ ">
+                            <i class=" fab fa-grav " style="color: rgb(154 106 247);"></i>
+                            <span class="layui-nav-item-name">关于</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/guestbook/ ">
+                            <i class=" fab fa-telegram " style="color: hsl(205deg 100% 50%);"></i>
+                            <span class="layui-nav-item-name">留言</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/link/ ">
+                            <i class=" fab fa-weixin " style="color: hsl(152deg 73% 45%);"></i>
+                            <span class="layui-nav-item-name">友链</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/shuoshuo/ ">
+                            <i class=" fas fa-coffee " style="color:#31c7c1;"></i>
+                            <span class="layui-nav-item-name">说说</span>
+                        </a>
+                    </li>
+                    
+                    
+                        <li class="layui-nav-item" id="btn-toggle-dark">🌙</li>
+                    
+                    <span class="layui-nav-bar" style="left: 342px; top: 78px; width: 0px; opacity: 0;"></span>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<header class="header">
+        
+            <div class="logo">
+                    <a href="/blog/"><img src="https://thirdqq.qlogo.cn/qqapp/1110061270/E0B4163FDCD19C3791B49B64EDB9F688/100" onerror=this.onerror=null,this.src="/blog/img/loading.gif"></a>
+            </div>
+         
+    </div>
+     
+
+            <div class="motto">
+                <span>用我的指尖实现我的技术梦</span>
+            </div>
+    
+    
+            <div class="social">
+                
+                        <a class="social-icon" href="https://github.com/gongsir0630" target="_blank" title="Github">
+                            <i class="iconfont icon-GitHub" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="mailto:gongsir0630@gmail.com" target="_blank" title="Email">
+                            <i class="iconfont icon-email" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="https://space.bilibili.com/277602309" target="_blank" title="Bilibili">
+                            <i class="iconfont icon-bilibili" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="/atom.xml" target="_blank" title="rss">
+                            <i class="iconfont icon-rss" aria-hidden="true"></i>
+                          </a>
+                 
+            </div>
+     
+</header>
+
+    
+<article id="post">
+  <div class="post-title">使用 Travis 打造 SpringBoot 应用持续集成和自动部署 | Travis CI 初体验</div>
+  
+<div class="post-meta">
+    
+    
+      <div class="post-meta-item date">
+        <span title="发表于 2021.04.02"><i class="far fa-calendar-alt"></i> 2021.04.02</span>
+      </div>
+      <div class="post-meta-item updated">
+        <span title="更新于 2023.07.30"><i class="far fa-calendar-check"></i> 2023.07.30</span>
+      </div>
+     
+    
+      <div class="post-meta-item categories">
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/blog/categories/%E5%8E%9F%E5%88%9B/">原创</a>
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/blog/categories/%E5%8E%9F%E5%88%9B/%E5%90%8E%E7%AB%AF/">后端</a>
+        
+      </div>
+     
+    
+     <div class="post-meta-item wordcount">
+        
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">2.3k 字</span>
+           
+        
+          <i class="far fa-clock"></i> <span class="post-count">9 分钟</span>
+                               
+      </div>
+     
+</div>
+
+
+  
+    <div id="toc" class="toc">
+          <h1>目录</h1>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90"><span class="toc-number">2.</span> <span class="toc-text">持续集成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E6%96%87%E5%BC%80%E5%A7%8B"><span class="toc-number">3.</span> <span class="toc-text">正文开始</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9C%80%E6%B1%82"><span class="toc-number">3.1.</span> <span class="toc-text">需求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GitHub-%E6%8E%88%E6%9D%83"><span class="toc-number">3.2.</span> <span class="toc-text">GitHub 授权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E9%A1%B9%E7%9B%AE%E7%9B%91%E6%8E%A7"><span class="toc-number">3.3.</span> <span class="toc-text">开启项目监控</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#travis-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">3.4.</span> <span class="toc-text">travis 配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-ssh-%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95"><span class="toc-number">3.4.1.</span> <span class="toc-text">配置 ssh 免密登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%8A%A0%E5%AF%86"><span class="toc-number">3.4.2.</span> <span class="toc-text">文件加密</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85"><span class="toc-number">3.4.3.</span> <span class="toc-text">项目打包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0%E9%83%A8%E7%BD%B2"><span class="toc-number">3.4.4.</span> <span class="toc-text">上传部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5"><span class="toc-number">3.4.5.</span> <span class="toc-text">邮件通知</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-number">3.5.</span> <span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-amp-%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5"><span class="toc-number">4.</span> <span class="toc-text">总结 &amp; 相关链接</span></a></li></ol>
+      </div>
+    
+  <div class="content">
+        <div><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近一直在写毕设项目（<a target="_blank" rel="noopener" href="https://github.com/gongsir0630/campus-recruitment-guidance">柚子帮校招指导服务平台</a>），顺便整理了一下自己 <a target="_blank" rel="noopener" href="https://github.com/gongsir0630">GitHub</a> 上的项目：</p>
+<p><img src= "/blog/img/loading.gif" data-src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9f3066c64416408db5d7a593fc125062~tplv-k3u1fbpfcp-watermark.image" alt="My GitHub HomePage"></p>
+<p>大学这几年，还是写了一些能上简历的项目，每一个项目都是 <code>Pm-&gt;Dev-&gt;Op</code> 进行角色扮演，特别是从开发到运维部署这一阶段， 以前每次的版本迭代都要重复下面的流程：</p>
+<ul>
+<li>git add &amp;&amp; git commit &amp;&amp; git push -&gt; ①代码的迭代</li>
+<li>mvn clean package -&gt; ②项目打包</li>
+<li>scp -r target/xxx.jar user@host:/dir/xxx.jar -&gt; ③上传应用到服务器</li>
+<li>ssh user@host -&gt; ④登录服务器</li>
+<li>sh restart.sh -&gt; ⑤执行部署脚本</li>
+<li>发现bug -&gt; 修改代码 -&gt; goto ①</li>
+</ul>
+<p>如果你也有类似经历，一定会深感<strong>持续集成</strong>的必要性，因为手动部署实在又繁琐又耗时，虽然部署流程基本固定，依然还是容易出错。</p>
+<h2 id="持续集成"><a href="#持续集成" class="headerlink" title="持续集成"></a>持续集成</h2><p>如果你很熟悉<strong>持续集成</strong>，一定会同意这样的观点：「使用它已经成为一种标配」。</p>
+<p>如果你还不了解<strong>持续集成</strong>，这里可以<a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2015/09/continuous-integration.html">快速入门</a>。</p>
+<p>市场上持续集成工具众多(Jenkins、Travis CI、Gitlab CI)，也有很多云平台集成了 CI/CID 服务（Coding、阿里云效等）。</p>
+<p>之前我体验过 <a target="_blank" rel="noopener" href="https://e.coding.net/">Coding</a> 平台的持续集成-构建计划，用于部署我自己的博客，相关文章和教程也发布在自己的博客，感兴趣的同学可以点击<a target="_blank" rel="noopener" href="https://blog.gongsir.club/">传送门</a>学习。</p>
+<p>最近整理 Github 项目，就想着体验一下使用 Travis CI 来实现项目的 CI，折腾了一天，无奈国内 Travis 文档稀缺，踩了很多坑，所以才来写了这篇文章，希望和同学们相互分享、学习！</p>
+<h2 id="正文开始"><a href="#正文开始" class="headerlink" title="正文开始"></a>正文开始</h2><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>要实现 CI，首先得有一个项目，本文使用的项目：<a target="_blank" rel="noopener" href="https://github.com/gongsir0630/wx-java-miniapp">gongsir0630/wx-java-miniapp</a></p>
+<p>项目基于 Spring-Boot 搭建，可以通过 Maven 打包运行。</p>
+<p>这里我希望每次提交代码到远程仓库后，travis 会自动编译打包项目，并上传到我的服务器，执行部署脚本，以实现项目自动部署，流程如下：</p>
+<ul>
+<li>修改代码</li>
+<li>git 提交到远程仓库</li>
+<li>travis 检测仓库变动，执行 <code>.travis.yml</code> 中的任务</li>
+<li>maven 编译打包</li>
+<li>上传 jar 到我的云服务器</li>
+<li>远程执行部署脚本</li>
+<li>邮件通知</li>
+</ul>
+<h3 id="GitHub-授权"><a href="#GitHub-授权" class="headerlink" title="GitHub 授权"></a>GitHub 授权</h3><p>进入<a target="_blank" rel="noopener" href="https://www.travis-ci.com/">Travis 官网</a>，直接使用 Github 账号登录，登入成功之后，根据页面引导开通 GitHub 仓库访问授权，在 <a target="_blank" rel="noopener" href="https://www.travis-ci.com/dashboard">Dashboard</a> 可以看到所有的授权仓库，可以给常用仓库加星标方便访问：</p>
+<p><img src= "/blog/img/loading.gif" data-src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a4fbd78b8d99414b8ba448eb0cd5973a~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+<blockquote>
+<p>注意 Travis 目前有两个官网：<a target="_blank" rel="noopener" href="https://www.travis-ci.com/">travis-ci.com</a> 和 <a target="_blank" rel="noopener" href="https://www.travis-ci.org/">travis-ci.org</a>. 官方通知后者即将关闭，所以我们使用前者。</p>
+</blockquote>
+<h3 id="开启项目监控"><a href="#开启项目监控" class="headerlink" title="开启项目监控"></a>开启项目监控</h3><p>在 <a target="_blank" rel="noopener" href="https://www.travis-ci.com/dashboard">Dashboard</a> 页面选择想要开启 travis 功能的仓库，点击<code>Trigger a build</code>即可开启对该仓库的监听，travis 一旦监听到仓库变动，就会自动触发构建任务：</p>
+<p><img src= "/blog/img/loading.gif" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/73aebcdc54dc4238aa9923452bd60101~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+<h3 id="travis-配置文件"><a href="#travis-配置文件" class="headerlink" title="travis 配置文件"></a>travis 配置文件</h3><p>在项目根目录添加<code>.travis.yml</code>文件，这里问题比较多，先上成功案例代码，再慢慢解释：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">language:</span> <span class="string">java</span></span><br><span class="line"><span class="attr">os:</span> <span class="string">linux</span></span><br><span class="line"><span class="attr">dist:</span> <span class="string">xenial</span></span><br><span class="line"><span class="attr">jdk:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">openjdk8</span></span><br><span class="line"></span><br><span class="line"><span class="attr">addons:</span></span><br><span class="line">  <span class="attr">ssh_known_hosts:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="number">39.106</span><span class="number">.230</span><span class="number">.88</span></span><br><span class="line"></span><br><span class="line"><span class="attr">script:</span> <span class="string">mvn</span> <span class="string">clean</span> <span class="string">package</span> <span class="string">-Dmaven.test.skip=true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">after_success:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">scp</span> <span class="string">-o</span> <span class="string">stricthostkeychecking=no</span> <span class="string">-r</span> <span class="string">target/wx-java-miniapp-0.0.1-SNAPSHOT.jar</span> <span class="string">travis@yzhelp.top:/www/wwwroot/travis-app/wx-java-miniapp</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">ssh</span> <span class="string">travis@yzhelp.top</span> <span class="string">-o</span> <span class="string">stricthostkeychecking=no</span> <span class="string">&quot;sh /www/wwwroot/travis-app/wx-java-miniapp/restart.sh&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">branches:</span></span><br><span class="line">  <span class="attr">only:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">main</span></span><br><span class="line">  </span><br><span class="line"><span class="attr">notifications:</span></span><br><span class="line">  <span class="attr">email:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">gongsir0630@gmail.com</span></span><br><span class="line">  </span><br><span class="line"><span class="attr">before_install:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">openssl</span> <span class="string">aes-256-cbc</span> <span class="string">-K</span> <span class="string">$encrypted_f217180e22ee_key</span> <span class="string">-iv</span> <span class="string">$encrypted_f217180e22ee_iv</span></span><br><span class="line">  <span class="string">-in</span> <span class="string">id_rsa.enc</span> <span class="string">-out</span> <span class="string">~/.ssh/id_rsa</span> <span class="string">-d</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">chmod</span> <span class="number">600</span> <span class="string">~/.ssh/id_rsa</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">echo</span> <span class="string">-e</span> <span class="string">&quot;Host yzhelp.top\n\tStrictHostKeyChecking no\n&quot;</span> <span class="string">&gt;&gt;</span> <span class="string">~/.ssh/config</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>配置思路：</p>
+<ol>
+<li>监测<code>main</code>分支变动，触发构建；</li>
+<li>配置 ssh 免密登录自己的云服务器；</li>
+<li>maven 项目打包；</li>
+<li>scp 上传 jar 文件到运费服务器（免密操作）；</li>
+<li>ssh 远程执行<code>restart.sh</code>部署脚本。</li>
+</ol>
+<blockquote>
+<p><strong>注意</strong> 本文不介绍 travis 文件编写方法，因为我也是第一次学习，建议同学到官网先了解一下相关配置和执行周期。</p>
+</blockquote>
+<h4 id="配置-ssh-免密登录"><a href="#配置-ssh-免密登录" class="headerlink" title="配置 ssh 免密登录"></a>配置 ssh 免密登录</h4><p>在 travis 构建任务中不能进行命令交互，我们可以通过 ssh 命令免密登录自己的服务器，这就需要先生成密钥对，在本地生成秘钥对，执行以下命令会在<code>~/.ssh/</code>目录下生成<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+<p>将公钥<code> id_rsa.pub</code>使用<code>ssh-copy-id</code>添加到服务器的受信列表：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -i id_rsa.pub root@hostname</span><br></pre></td></tr></table></figure>
+<p>修改本地<code>~/.ssh/config</code>文件，追加以下内容：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 远程主机名称</span><br><span class="line"><span class="title class_">Host</span> yzhelp.<span class="property">top</span></span><br><span class="line"># 远程主机域名或者 ip 地址</span><br><span class="line"><span class="title class_">HostName</span> yzhelp.<span class="property">top</span></span><br><span class="line"># 认证方式</span><br><span class="line"><span class="title class_">PreferredAuthentications</span> publickey</span><br><span class="line"># 私钥位置</span><br><span class="line"><span class="title class_">IdentityFile</span> /<span class="title class_">Users</span>/gongsir/.<span class="property">ssh</span>/id_rsa_yzhelp</span><br><span class="line"># 用户名</span><br><span class="line"><span class="title class_">User</span> root</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注意</strong> 如果你本机只有一对秘钥对，可以不用上述配置，如果有多对秘钥对，必须进行上述配置，否则登录时秘钥不会配对。</p>
+</blockquote>
+<p>测试免密登录：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@hostname</span><br></pre></td></tr></table></figure>
+<p>这只是我们自己的电脑可以免密登录到服务器，我们需要配置 travis 的服务器可以免密登录到我们的云服务器，很简单，我们只需要把我们本地的私钥<code>id_rsa</code>复制一份给 travis 的服务器就可以了。</p>
+<p>但是直接把私钥公布出去太危险了，travis 给我们提供了解决方案：</p>
+<ul>
+<li>在本地使用<code>travis-cli</code>工具对文件进行加密，生成<code>*.enc</code>文件</li>
+<li>将解密串写入 travis 网站的环境变量中</li>
+<li>执行构建任务时，使用解密串对加密文件进行解密即可得到原文件</li>
+</ul>
+<h4 id="文件加密"><a href="#文件加密" class="headerlink" title="文件加密"></a>文件加密</h4><p>不多说，官网有详细文档，直接上步骤。</p>
+<p>本地安装<code>travis-cli</code>工具：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem install travis</span><br></pre></td></tr></table></figure>
+<p>登录 travis，这里坑就比较多了：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>提示信息</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>travis login --auto</code></td>
+<td>提示输入 GitHub 的账号密码，登录失败</td>
+<td>❌ Not Found</td>
+</tr>
+<tr>
+<td><code>travis login --github-token token</code></td>
+<td>登录成功，但是后续操作会提示 token 失效</td>
+<td>✅ 可以登录，但是文件加密会提示 token 无效</td>
+</tr>
+<tr>
+<td><code>travis login --github-token token --pro</code></td>
+<td>登录成功</td>
+<td>✅ 登陆成功</td>
+</tr>
+</tbody></table>
+<p>这个环节折腾了大把时间，网上也没找到具体解决方法，这里说下流程：</p>
+<ul>
+<li><code>travis-cli</code> 默认登录的是 <a target="_blank" rel="noopener" href="https://api.travis-ci.org/">ttps://api.travis-ci.org/</a></li>
+<li>而我们授权的是 <a target="_blank" rel="noopener" href="https://api.travis-ci.com/">ttps://api.travis-ci.com/</a></li>
+<li>因此我们需要使用第三种登录方式，即加上 <code>--pro</code> 选项，此时所有请求都发向 <a target="_blank" rel="noopener" href="https://api.travis-ci.com/">ttps://api.travis-ci.com/</a></li>
+</ul>
+<p>我们可以查看本地的 <code>~/.travis/config</code> 确认api：</p>
+<p><img src= "/blog/img/loading.gif" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f0c0d58d19d1446cb7a5df86143289db~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+<p>登陆成功之后，对<code>id_rsa</code>进行加密，在项目根目录执行以下操作：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 此处的--add参数表示自动添加脚本到.travis.yml文件中</span></span><br><span class="line"><span class="comment"># 这里也需要加上 --pro 选项</span></span><br><span class="line">travis encrypt-file ~/.ssh/id_rsa --add --pro</span><br></pre></td></tr></table></figure>
+<p>执行完上述命令，会产生的结果：</p>
+<ul>
+<li><p>本地新增<code>id_rsa.enc</code>，我们需要把这个文件上传到远程仓库供 travis 使用</p>
+</li>
+<li><p><code>.travis.yml</code>文件中会增加类似内容：</p>
+  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">before_install:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">openssl</span> <span class="string">aes-256-cbc</span> <span class="string">-K</span> <span class="string">$encrypted_f217180e22ee_key</span> <span class="string">-iv</span> <span class="string">$encrypted_f217180e22ee_iv</span></span><br><span class="line">  <span class="string">-in</span> <span class="string">id_rsa.enc</span> <span class="string">-out</span> <span class="string">id_rsa</span> <span class="string">-d</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>-in</code> 表示输入文件，即我们要解密的文件</li>
+<li><code>-out</code> 表示解密后的文件，这里我们需要手动将路径修改为 <code>~/.ssh/id_rsa</code></li>
+</ul>
+</li>
+<li><p>travis 仓库中会新增两个环境变量</p>
+<p>  <img src= "/blog/img/loading.gif" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1b52ad2fd858454a8d3b17792015ac78~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+</li>
+</ul>
+<p>经过以上步骤，travis 服务器成功获取到我们的秘钥文件<code>id_rsa</code>，为了保证后面能成功执行 ssh 免密登录，我们也需要配置一下权限和主机认证使用的秘钥文件：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">addons:</span></span><br><span class="line">  <span class="attr">ssh_known_hosts:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">这里写自己的服务器的域名或</span> <span class="string">ip</span> <span class="string">地址</span></span><br><span class="line">  </span><br><span class="line"><span class="attr">before_install:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">openssl</span> <span class="string">aes-256-cbc</span> <span class="string">-K</span> <span class="string">$encrypted_f217180e22ee_key</span> <span class="string">-iv</span> <span class="string">$encrypted_f217180e22ee_iv</span></span><br><span class="line">  <span class="string">-in</span> <span class="string">id_rsa.enc</span> <span class="string">-out</span> <span class="string">~/.ssh/id_rsa</span> <span class="string">-d</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">chmod</span> <span class="number">600</span> <span class="string">~/.ssh/id_rsa</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">echo</span> <span class="string">-e</span> <span class="string">&quot;Host 自己的服务器域名或 ip 地址\n\tStrictHostKeyChecking no\n&quot;</span> <span class="string">&gt;&gt;</span> <span class="string">~/.ssh/config</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="项目打包"><a href="#项目打包" class="headerlink" title="项目打包"></a>项目打包</h4><p>配置 <code>script</code> 即可：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">script:</span> <span class="string">mvn</span> <span class="string">clean</span> <span class="string">package</span> <span class="string">-Dmaven.test.skip=true</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="上传部署"><a href="#上传部署" class="headerlink" title="上传部署"></a>上传部署</h4><p>使用 scp 命令上传 jar 文件到服务器指定目录（预先创建），并执行部署脚本：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">after_success:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">scp</span> <span class="string">-o</span> <span class="string">stricthostkeychecking=no</span> <span class="string">-r</span> <span class="string">target/wx-java-miniapp-0.0.1-SNAPSHOT.jar</span> <span class="string">travis@yzhelp.top:/www/wwwroot/travis-app/wx-java-miniapp</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">ssh</span> <span class="string">travis@yzhelp.top</span> <span class="string">-o</span> <span class="string">stricthostkeychecking=no</span> <span class="string">&quot;sh /www/wwwroot/travis-app/wx-java-miniapp/restart.sh&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>部署脚本（提供参考）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br><span class="line"></span><br><span class="line">jarName=/www/wwwroot/travis-app/wx-java-miniapp/wx-java-miniapp-0.0.1-SNAPSHOT</span><br><span class="line"></span><br><span class="line">ps -ef|grep <span class="variable">$&#123;jarName&#125;</span>.jar|grep -v grep|awk <span class="string">&#x27;&#123;print &quot;kill -9 &quot;$2&#125;&#x27;</span>|sh</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;stop sucess&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">nohup</span> java -jar <span class="variable">$&#123;jarName&#125;</span>.jar &gt; <span class="variable">$&#123;jarName&#125;</span>.<span class="built_in">log</span> 2&gt;&amp;1 &amp;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$&#123;jarName&#125;</span>.jar deploy sucess&quot;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注意</strong> 这里说一下，部署脚本中包含 <code>nohup</code> 命令，一定要在脚本第一行声明 <code>source /etc/profile</code>，否则 ssh 获取不到环境变量，导致部署失败。</p>
+</blockquote>
+<h4 id="邮件通知"><a href="#邮件通知" class="headerlink" title="邮件通知"></a>邮件通知</h4><p>travis 构建完成之后，无论成功还是失败，都会邮件通知你：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">notifications:</span></span><br><span class="line">  <span class="attr">email:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">gongsir0630@gmail.com</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>提交 travis 规则到远程仓库，进入 travis 官网即可看到构建日志：</p>
+<p><img src= "/blog/img/loading.gif" data-src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b710401a479b42e4813cfd53cf0499f9~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+<p>点击顶部的徽章还可以复制 md 格式添加到你的 readme 文件中：</p>
+<p><img src= "/blog/img/loading.gif" data-src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fd6ab71c767344bebfdf9aa0cae6e78a~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+<h2 id="总结-amp-相关链接"><a href="#总结-amp-相关链接" class="headerlink" title="总结 &amp; 相关链接"></a>总结 &amp; 相关链接</h2><p>以上就是使用 Travis 打造 SpringBoot 应用持续集成和自动部署的全过程，希望能和大家一起分享学习，如果对你有帮助，还请点个赞支持一下，谢谢！</p>
+<p>相关链接：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/gongsir0630/wx-java-miniapp">示例项目 | wx-java-miniapp</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.travis-ci.com/">Travis 官网文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903808758185998">参考文章：用 Travis CI 打造大前端持续集成和自动化部署</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903957215576078">参考文章：利用Travis CI+GitHub实现持续集成和自动部署</a></li>
+</ul>
+</div>
+        
+  </div>
+
+    <div class="post_tags">
+      
+        <i class="fas fa-tag"></i> <a href="/blog/tags/Travis-CI/" class="tag">Travis CI</a>
+      
+    </div>
+    <div class="post-nav">
+      
+      
+        <div class="post-nav-next post-nav-item">
+            <a href="/blog/2021/03/26/shiro-jwt-demo.html" >基于Shiro | JWT整合WxJava实现微信小程序登录<i class="fa fa-chevron-right"></i></a>
+        </div>
+      
+    </div>
+      
+
+
+
+  <div id="valine"></div>
+  <script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  <script>
+        new Valine({
+          el: '#valine',
+          appId: "7sd5RvAKvPf0dty5f4QfFL7R-gzGzoHsz",
+          appKey: "gjLXJe9CumUibqTPtE6TmIQn",
+          avatar: "robohash",
+          lang: "",
+          meta: 'nick,mail,link'.split(','),
+          requiredFields: 'nick,mail'.split(','),
+          placeholder: "评论记得带上邮箱,你的留言我会马上收到邮箱提醒哒",
+          pageSize:'10',
+          recordIP: 'false',
+          serverURLs: "https://blog.gongsir.club",
+          emojiCDN: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/",
+          enableQQ: "true",
+        });
+  </script>
+  
+
+</article>
+
+    
+<a id="gotop" href="javascript:" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    
+
+
+
+
+
+
+    
+<div id="bottom-outer">
+    <div id="bottom-inner">
+        © 2020 <i class="fa fa-heart" id="heart"></i> 程序员Kyle✨ 
+        <br>
+        Powered by 
+        <a target="_blank" rel="noopener" href="http://hexo.io">hexo</a> | Theme is <a target="_blank" rel="noopener" href="https://github.com/a2396837/hexo-theme-blank/">blank</a>
+        
+          <div class="icp-info">
+            
+            <img  class="icp-icon" src="/img/icp.png">
+            
+          <a href="http://www.beian.miit.gov.cn/" target="_blank"> 蜀ICP备19016450号</a>
+        </div>
+        
+    </div>  
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/layui-src@2.5.5/dist/layui.min.js"></script>
+
+
+
+  
+    <script src="/blog/js/script.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+  
+
+ 
+
+  <script src="/blog/js/local-search.js"></script>
+<script type="text/javascript">      
+  var search_path = "search.xml";
+if (search_path.length == 0) {
+  search_path = "search.xml";
+}
+var path = "/blog/" + search_path;
+  searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
+  
+
+
+  <script>
+    window.lazyLoadOptions = {
+      elements_selector: 'img',
+      threshold: 0
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script>   
+  
+
+
+  <script>
+    var images = $('img').not('.nav-logo img').not('.card img').not($('a>img')).not('.reward-content img')
+    images.each(function (i, o) {
+      var lazyloadSrc = $(o).attr('data-src') ? $(o).attr('data-src') : $(o).attr('src')
+      $(o).wrap(`<a href="${lazyloadSrc}" data-fancybox="group" data-caption="${$(o).attr('alt')}" class="fancybox"></a>`)
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script>
+  <script>
+        $().fancybox({
+      selector: '[data-fancybox]',
+      loop: true,
+      transitionEffect: 'slide',
+      protect: true,
+      buttons: ['slideShow', 'fullScreen', 'thumbs', 'close']
+    })
+  </script>   
+  
+
+
+  <script>
+  if (!window.MathJax) {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]],
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+              const display = !!node.type.match(/; *mode=display/)
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+              const text = document.createTextNode('')
+              node.parentNode.replaceChild(text, node)
+              math.start = {node: text, delim: '', n: 0}
+              math.end = {node: text, delim: '', n: 0}
+              doc.math.push(math)
+            }
+          }, '']
+        }
+      }
+    }
+    
+    var script = document.createElement('script')
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"
+    script.id = 'MathJax-script'
+    script.async = true
+    document.head.appendChild(script)
+  } else {
+    MathJax.startup.document.state(0)
+    MathJax.texReset()
+    MathJax.typeset()
+  }
+  </script>
+  
+
+
+  
+<script>
+if (document.getElementsByClassName('mermaid').length) {
+    if (window.mermaidJsLoad) mermaid.init()
+    else {
+      $.getScript("https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js", function () {
+        window.mermaidJsLoad = true
+        mermaid.initialize({
+          theme: "default",
+        })
+      })
+    }
+  }
+  </script>
+  
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script>
+  
+
+
+  <script src="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/js/firework.js"></script>
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js"></script>
+<script>
+!function (e, t, a) {
+  var initCopyCode = function(){
+    var copyHtml = '';
+    copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+    copyHtml += '  <i class="fa fa-clipboard"></i><span>复制</span>';
+    copyHtml += '</button>';
+    $(".highlight .code pre").before(copyHtml);
+    new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+  }
+  initCopyCode();
+}(window, document);
+</script>  
+  
+
+<script>
+  var btntop = $('#gotop');
+  btntop.on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, '300');
+  });
+
+  var $table = $('.content table').not($('figure.highlight > table'))
+$table.each(function () {
+  $(this).wrap('<div class="table-wrap"></div>')
+})
+</script>
+
+
+
+</html>

@@ -1,0 +1,35 @@
+/* mobile phone and smart portable devices */
+@media screen and (max-width: 1200px) {
+  .header {
+    padding: 100px 0;
+  }
+  .moto p {
+    font-size: smaller;
+  }
+  .nav .layui-nav .layui-nav-item {
+    display: inline-block;
+    margin: 0;
+    padding: 1.25em;
+  }
+  .comments {
+    padding-top: 10px;
+  }
+  #links {
+    padding-left: 1em !important;
+  }
+  .card {
+    float: none;
+    width: calc(100% - 15px) !important;
+  }
+  .card:nth-child(even) {
+    float: none !important;
+  }
+  .tags {
+    display: block !important;
+    text-align: center !important;
+  }
+  .back {
+    float: none !important;
+    text-align: center !important;
+  }
+}

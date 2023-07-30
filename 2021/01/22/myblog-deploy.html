@@ -1,0 +1,561 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+    <link rel="icon" href="https://thirdqq.qlogo.cn/qqapp/1110061270/E0B4163FDCD19C3791B49B64EDB9F688/100">
+  
+  
+      <meta name="author" content="程序员Kyle✨">
+  
+  
+      <meta name="subtitle" content="程序员Kyle✨的个人博客">
+  
+  
+      <meta name="description" content="程序员Kyle✨的个人博客,记录随笔与学习笔记，Java后端相关的知识，个人面经等">
+  
+  
+      <meta name="keywords" content=",程序员Kyle✨">
+  
+  
+    <link rel="alternate" href="/blog/atom.xml " title="程序员Kyle✨｜个人博客" type="application/atom+xml">
+  
+
+  
+
+  <title>3️⃣MyBlog-Hexo项目持续集成发布 | 程序员Kyle✨｜个人博客</title>
+
+  
+
+  
+
+  
+      
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+  
+
+  <link rel="stylesheet" href="/blog/css/style.css" >
+  <link rel="stylesheet" href="/blog/css/partial/dark.css" >
+
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&amp;display=swap"  media="print" onload="this.media='all'">
+  
+  
+  
+
+  
+    
+      <link rel="stylesheet" href="/blog/css/partial/highlight/atom-one-light.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/css/iconfont.css">
+    
+  
+
+  
+    <script src="/blog/js/todark.js"></script>
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+</html>
+    
+<div class="nav index" style="height: 60px;">
+    <div class="title animated fadeInDown">
+        <div class="layui-container">
+                <div class="nav-title"><a href="/blog/" title="程序员Kyle✨｜个人博客">程序员Kyle✨｜个人博客</a></div>
+            <div class="nav-list">
+                <button> <span class=""></span><span style="display: block;"></span><span class=""></span> </button>
+                <ul class="layui-nav" lay-filter="">
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/search/ ">
+                            <i class=" fas fa-search-plus " style="color: rgb(3 169 244);"></i>
+                            <span class="layui-nav-item-name">搜索</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/ ">
+                            <i class=" fab fa-fort-awesome " style="color: rgb(255 107 107);"></i>
+                            <span class="layui-nav-item-name">首页</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/archives/ ">
+                            <i class=" fas fa-archive " style="color: rgb(10 189 227);"></i>
+                            <span class="layui-nav-item-name">时间线</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/tags/ ">
+                            <i class=" fas fa-hashtag " style="color: rgb(254 202 87);"></i>
+                            <span class="layui-nav-item-name">标签</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/categories ">
+                            <i class=" far fa-folder-open " style="color: rgb(29 209 161);"></i>
+                            <span class="layui-nav-item-name">分类</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/about/ ">
+                            <i class=" fab fa-grav " style="color: rgb(154 106 247);"></i>
+                            <span class="layui-nav-item-name">关于</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/guestbook/ ">
+                            <i class=" fab fa-telegram " style="color: hsl(205deg 100% 50%);"></i>
+                            <span class="layui-nav-item-name">留言</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/link/ ">
+                            <i class=" fab fa-weixin " style="color: hsl(152deg 73% 45%);"></i>
+                            <span class="layui-nav-item-name">友链</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/shuoshuo/ ">
+                            <i class=" fas fa-coffee " style="color:#31c7c1;"></i>
+                            <span class="layui-nav-item-name">说说</span>
+                        </a>
+                    </li>
+                    
+                    
+                        <li class="layui-nav-item" id="btn-toggle-dark">🌙</li>
+                    
+                    <span class="layui-nav-bar" style="left: 342px; top: 78px; width: 0px; opacity: 0;"></span>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<header class="header">
+        
+            <div class="logo">
+                    <a href="/blog/"><img src="https://thirdqq.qlogo.cn/qqapp/1110061270/E0B4163FDCD19C3791B49B64EDB9F688/100" onerror=this.onerror=null,this.src="/blog/img/loading.gif"></a>
+            </div>
+         
+    </div>
+     
+
+            <div class="motto">
+                <span>用我的指尖实现我的技术梦</span>
+            </div>
+    
+    
+            <div class="social">
+                
+                        <a class="social-icon" href="https://github.com/gongsir0630" target="_blank" title="Github">
+                            <i class="iconfont icon-GitHub" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="mailto:gongsir0630@gmail.com" target="_blank" title="Email">
+                            <i class="iconfont icon-email" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="https://space.bilibili.com/277602309" target="_blank" title="Bilibili">
+                            <i class="iconfont icon-bilibili" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="/atom.xml" target="_blank" title="rss">
+                            <i class="iconfont icon-rss" aria-hidden="true"></i>
+                          </a>
+                 
+            </div>
+     
+</header>
+
+    
+<article id="post">
+  <div class="post-title">3️⃣MyBlog-Hexo项目持续集成发布</div>
+  
+<div class="post-meta">
+    
+      <div class="post-meta-item top">
+        <i class="far fa-bookmark"></i>
+        <span class="sticky">置顶</span>
+      </div>
+    
+    
+      <div class="post-meta-item date">
+        <span title="发表于 2021.01.22"><i class="far fa-calendar-alt"></i> 2021.01.22</span>
+      </div>
+      <div class="post-meta-item updated">
+        <span title="更新于 2023.07.30"><i class="far fa-calendar-check"></i> 2023.07.30</span>
+      </div>
+     
+    
+      <div class="post-meta-item categories">
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/blog/categories/%E5%8E%9F%E5%88%9B/">原创</a>
+        
+      </div>
+     
+    
+     <div class="post-meta-item wordcount">
+        
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">747 字</span>
+           
+        
+          <i class="far fa-clock"></i> <span class="post-count">3 分钟</span>
+                               
+      </div>
+     
+</div>
+
+
+  
+    <div id="toc" class="toc">
+          <h1>目录</h1>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E5%88%97-%F0%9F%93%92"><span class="toc-number">1.</span> <span class="toc-text">系列 📒</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2"><span class="toc-number">1.1.</span> <span class="toc-text">发布博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95"><span class="toc-number">1.2.</span> <span class="toc-text">系列文章目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#It%E2%80%99s-Show-Time-%F0%9F%8C%9F"><span class="toc-number">2.</span> <span class="toc-text">It’s Show~Time 🌟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="toc-number">3.</span> <span class="toc-text">参考文档</span></a></li></ol>
+      </div>
+    
+  <div class="content">
+        <div><p>很久没更了,这段时间开始做毕设了,所以更新慢了,见谅! 这是 <strong>MyBlog</strong> 系列文章第三篇，上文讲了如何将hexo项目进行远程托管.本文说一下怎么使用Coding平台的持续集成对我们的Hexo项目进行自动部署.</p>
+<a id="more"></a>
+
+<h2 id="系列-📒"><a href="#系列-📒" class="headerlink" title="系列 📒"></a>系列 📒</h2><p>我的博客(<a target="_blank" rel="noopener" href="https://blog.gongsir.club/">程序员Kyle✨|技术博客</a>)是基于Hexo搭建的, 代码托管在GitHub和Coding, 部署在阿里云服务器, 其中部署是基于Coding提供的持续集成.</p>
+<h3 id="发布博客"><a href="#发布博客" class="headerlink" title="发布博客"></a>发布博客</h3><p>在本地编写 Markdown 文件, 然后将代码push到托管平台, 即可自动触发持续集成, 将网页部署到云服务器, 全自动~</p>
+<h3 id="系列文章目录"><a href="#系列文章目录" class="headerlink" title="系列文章目录"></a>系列文章目录</h3><ol>
+<li><a href="/2020/12/14/MyBlog-Hexo/">MyBlog-Hexo搭建自己的博客</a></li>
+<li><a href="/2020/12/20/myblog-code.html">MyBlog-多平台代码托管</a></li>
+<li><a href="/2021/01/22/myblog-deploy.html">MyBlog-Hexo项目持续集成发布</a><hr>
+
+</li>
+</ol>
+<h2 id="It’s-Show-Time-🌟"><a href="#It’s-Show-Time-🌟" class="headerlink" title="It’s Show~Time 🌟"></a>It’s Show~Time 🌟</h2><ol>
+<li><p>注册Coding团队,进入工作台,创建项目:<br><img src= "/blog/img/loading.gif" data-src="https://cdn.gongsir.club/blog/image/2021/01/22UIPJbh.png" alt="22UIPJbh"></p>
+</li>
+<li><p>创建DevOps模板项目,填写自定义信息:<br><img src= "/blog/img/loading.gif" data-src="https://cdn.gongsir.club/blog/image/2021/01/22XkYjq6.png" alt="22XkYjq6"></p>
+</li>
+<li><p>进入项目后,界面如下:<br><img src= "/blog/img/loading.gif" data-src="https://cdn.gongsir.club/blog/image/2021/01/22Av92HB.png" alt="22Av92HB"></p>
+</li>
+<li><p>代码仓库可以托管我们的Hexo项目,可以直接从GitHub克隆过来,并且提供了定时更新;也可以在本地开发环境直接提交到这里:<br><img src= "/blog/img/loading.gif" data-src="https://cdn.gongsir.club/blog/image/2021/01/22EcRyhE.png" alt="22EcRyhE"></p>
+</li>
+<li><p>选择<code>持续集成</code>,新建构建计划,配置仓库信息,选择hexo项目的托管平台,我的是Coding,选择静态配置Jenkinsfile:<br><img src= "/blog/img/loading.gif" data-src="https://cdn.gongsir.club/blog/image/2021/01/22RpeXuR.png" alt="22RpeXuR"></p>
+</li>
+<li><p>编写Jenkinsfile:</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">pipeline &#123;</span><br><span class="line">agent any</span><br><span class="line">stages &#123;</span><br><span class="line">    stage(<span class="string">&#x27;检出&#x27;</span>) &#123;</span><br><span class="line">    steps &#123;</span><br><span class="line">        checkout([</span><br><span class="line">        <span class="variable">$class</span>: <span class="string">&#x27;GitSCM&#x27;</span>, branches: [[name: env.GIT_BUILD_REF]],</span><br><span class="line">        userRemoteConfigs: [[</span><br><span class="line">            url: env.GIT_REPO_URL,</span><br><span class="line">            credentialsId: env.CREDENTIALS_ID</span><br><span class="line">        ]]</span><br><span class="line">        ])</span><br><span class="line">        sh <span class="string">&#x27;ls -la&#x27;</span></span><br><span class="line">        sh <span class="string">&#x27;git submodule init&#x27;</span></span><br><span class="line">        sh <span class="string">&#x27;git submodule update&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    stage(<span class="string">&#x27;构建&#x27;</span>) &#123;</span><br><span class="line">    steps &#123;</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&#x27;构建中...&#x27;</span></span><br><span class="line">        sh <span class="string">&#x27;&#x27;</span><span class="string">&#x27;pwd</span></span><br><span class="line"><span class="string">            node -v</span></span><br><span class="line"><span class="string">            npm install -g hexo-cli</span></span><br><span class="line"><span class="string">            npm install&#x27;</span><span class="string">&#x27;&#x27;</span></span><br><span class="line">                    npmAuditInDir(directory: <span class="string">&#x27;/&#x27;</span>, collectResult: <span class="literal">true</span>)</span><br><span class="line">                    sh <span class="string">&#x27;&#x27;</span><span class="string">&#x27;pwd</span></span><br><span class="line"><span class="string">            hexo clean</span></span><br><span class="line"><span class="string">            hexo generate&#x27;</span><span class="string">&#x27;&#x27;</span></span><br><span class="line">        sh <span class="string">&#x27;tar -zcf /tmp/tmp.tar.gz public/&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&#x27;构建完成.&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    stage(<span class="string">&#x27;测试&#x27;</span>) &#123;</span><br><span class="line">    steps &#123;</span><br><span class="line">        sh <span class="string">&#x27;&#x27;</span><span class="string">&#x27;ls -lh public/</span></span><br><span class="line"><span class="string">                if [ ! -s public/index.html ]</span></span><br><span class="line"><span class="string">                then</span></span><br><span class="line"><span class="string">                exit 1</span></span><br><span class="line"><span class="string">                fi&#x27;</span><span class="string">&#x27;&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    stage(<span class="string">&#x27;部署&#x27;</span>) &#123;</span><br><span class="line">    steps &#123;</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&#x27;部署中...&#x27;</span></span><br><span class="line">        script &#123;</span><br><span class="line">        def remote = [:]</span><br><span class="line">        remote.name = <span class="string">&#x27;aliyun-server&#x27;</span></span><br><span class="line">        remote.allowAnyHosts = <span class="literal">true</span></span><br><span class="line">        remote.host = <span class="string">&#x27;gongsir.club&#x27;</span></span><br><span class="line">        remote.port = 22</span><br><span class="line">        remote.user = <span class="string">&#x27;root&#x27;</span></span><br><span class="line"></span><br><span class="line">        // 把「CODING 凭据管理」中的「凭据 ID」填入 credentialsId，而 username 和 password 无需修改</span><br><span class="line">        withCredentials([usernamePassword(credentialsId: <span class="string">&quot;1f981c07-2c51-4a64-a93b-be09ba76a406&quot;</span>, usernameVariable: <span class="string">&#x27;username&#x27;</span>, passwordVariable: <span class="string">&#x27;password&#x27;</span>)]) &#123;</span><br><span class="line">            remote.user = username</span><br><span class="line">            remote.password = password</span><br><span class="line"></span><br><span class="line">            // SSH 上传文件到远端服务器</span><br><span class="line">            sshPut remote: remote, from: <span class="string">&#x27;/tmp/tmp.tar.gz&#x27;</span>, into: <span class="string">&#x27;/tmp/&#x27;</span></span><br><span class="line">            // 解压缩</span><br><span class="line">            sshCommand remote: remote, <span class="built_in">command</span>: <span class="string">&quot;tar -zxf /tmp/tmp.tar.gz -C /tmp/&quot;</span></span><br><span class="line">            sshCommand remote: remote, sudo: <span class="literal">true</span>, <span class="built_in">command</span>: <span class="string">&quot;mkdir -p /www/wwwroot/blog.gongsir.club&quot;</span></span><br><span class="line">            sshCommand remote: remote, sudo: <span class="literal">true</span>, <span class="built_in">command</span>: <span class="string">&quot;cp -R /tmp/public/* /www/wwwroot/blog.gongsir.club/&quot;</span></span><br><span class="line">            // 重启 nginx</span><br><span class="line">            sshCommand remote: remote, sudo: <span class="literal">true</span>, <span class="built_in">command</span>: <span class="string">&quot;nginx -s reload&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&#x27;部署完成&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 「CODING 凭据管理」中的「凭据 ID」:<br> <img src= "/blog/img/loading.gif" data-src="https://cdn.gongsir.club/blog/image/2021/03/19fDIDPk.png" alt="凭据ID设置"></p>
+</li>
+<li><p>设置触发规则,设置代码更新到制定分支时自动触发:<br><img src= "/blog/img/loading.gif" data-src="https://cdn.gongsir.club/blog/image/2021/01/22TkLg3F.png" alt="22TkLg3F"></p>
+</li>
+<li><p>服务器使用<code>NGINX</code>部署静态文件夹即可:<br><img src= "/blog/img/loading.gif" data-src="https://cdn.gongsir.club/blog/image/2021/01/22fpDGmY.png" alt="22fpDGmY"></p>
+</li>
+<li><p>看成果:<br><img src= "/blog/img/loading.gif" data-src="https://cdn.gongsir.club/blog/gif/myblog-deploy-show.gif" alt="自动部署展示"></p>
+</li>
+</ol>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://help.coding.net/docs/ci/start.html">快速开始持续集成</a></li>
+<li><a target="_blank" rel="noopener" href="https://help.coding.net/docs/ci/deploy/ssh.html">自动部署到Linux服务器</a></li>
+</ul>
+</div>
+        
+  </div>
+
+    <div class="post_tags">
+      
+        <i class="fas fa-tag"></i> <a href="/blog/tags/hexo/" class="tag">hexo</a>
+      
+        <i class="fas fa-tag"></i> <a href="/blog/tags/MyBlog/" class="tag">MyBlog</a>
+      
+    </div>
+    <div class="post-nav">
+      
+        <div class="post-nav-prev post-nav-item">
+            <a href="/blog/2021/02/01/mysql001.html" >mysql配置远程连接和修改密码<i class="fa fa-chevron-left"></i></a>
+        </div>
+      
+      
+        <div class="post-nav-next post-nav-item">
+            <a href="/blog/2020/12/20/myblog-code.html" >2️⃣MyBlog-多平台代码托管<i class="fa fa-chevron-right"></i></a>
+        </div>
+      
+    </div>
+      
+
+
+
+  <div id="valine"></div>
+  <script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  <script>
+        new Valine({
+          el: '#valine',
+          appId: "7sd5RvAKvPf0dty5f4QfFL7R-gzGzoHsz",
+          appKey: "gjLXJe9CumUibqTPtE6TmIQn",
+          avatar: "robohash",
+          lang: "",
+          meta: 'nick,mail,link'.split(','),
+          requiredFields: 'nick,mail'.split(','),
+          placeholder: "评论记得带上邮箱,你的留言我会马上收到邮箱提醒哒",
+          pageSize:'10',
+          recordIP: 'false',
+          serverURLs: "https://blog.gongsir.club",
+          emojiCDN: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/",
+          enableQQ: "true",
+        });
+  </script>
+  
+
+</article>
+
+    
+<a id="gotop" href="javascript:" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    
+
+
+
+
+
+
+    
+<div id="bottom-outer">
+    <div id="bottom-inner">
+        © 2020 <i class="fa fa-heart" id="heart"></i> 程序员Kyle✨ 
+        <br>
+        Powered by 
+        <a target="_blank" rel="noopener" href="http://hexo.io">hexo</a> | Theme is <a target="_blank" rel="noopener" href="https://github.com/a2396837/hexo-theme-blank/">blank</a>
+        
+          <div class="icp-info">
+            
+            <img  class="icp-icon" src="/img/icp.png">
+            
+          <a href="http://www.beian.miit.gov.cn/" target="_blank"> 蜀ICP备19016450号</a>
+        </div>
+        
+    </div>  
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/layui-src@2.5.5/dist/layui.min.js"></script>
+
+
+
+  
+    <script src="/blog/js/script.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+  
+
+ 
+
+  <script src="/blog/js/local-search.js"></script>
+<script type="text/javascript">      
+  var search_path = "search.xml";
+if (search_path.length == 0) {
+  search_path = "search.xml";
+}
+var path = "/blog/" + search_path;
+  searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
+  
+
+
+  <script>
+    window.lazyLoadOptions = {
+      elements_selector: 'img',
+      threshold: 0
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script>   
+  
+
+
+  <script>
+    var images = $('img').not('.nav-logo img').not('.card img').not($('a>img')).not('.reward-content img')
+    images.each(function (i, o) {
+      var lazyloadSrc = $(o).attr('data-src') ? $(o).attr('data-src') : $(o).attr('src')
+      $(o).wrap(`<a href="${lazyloadSrc}" data-fancybox="group" data-caption="${$(o).attr('alt')}" class="fancybox"></a>`)
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script>
+  <script>
+        $().fancybox({
+      selector: '[data-fancybox]',
+      loop: true,
+      transitionEffect: 'slide',
+      protect: true,
+      buttons: ['slideShow', 'fullScreen', 'thumbs', 'close']
+    })
+  </script>   
+  
+
+
+  <script>
+  if (!window.MathJax) {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]],
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+              const display = !!node.type.match(/; *mode=display/)
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+              const text = document.createTextNode('')
+              node.parentNode.replaceChild(text, node)
+              math.start = {node: text, delim: '', n: 0}
+              math.end = {node: text, delim: '', n: 0}
+              doc.math.push(math)
+            }
+          }, '']
+        }
+      }
+    }
+    
+    var script = document.createElement('script')
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"
+    script.id = 'MathJax-script'
+    script.async = true
+    document.head.appendChild(script)
+  } else {
+    MathJax.startup.document.state(0)
+    MathJax.texReset()
+    MathJax.typeset()
+  }
+  </script>
+  
+
+
+  
+<script>
+if (document.getElementsByClassName('mermaid').length) {
+    if (window.mermaidJsLoad) mermaid.init()
+    else {
+      $.getScript("https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js", function () {
+        window.mermaidJsLoad = true
+        mermaid.initialize({
+          theme: "default",
+        })
+      })
+    }
+  }
+  </script>
+  
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script>
+  
+
+
+  <script src="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/js/firework.js"></script>
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js"></script>
+<script>
+!function (e, t, a) {
+  var initCopyCode = function(){
+    var copyHtml = '';
+    copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+    copyHtml += '  <i class="fa fa-clipboard"></i><span>复制</span>';
+    copyHtml += '</button>';
+    $(".highlight .code pre").before(copyHtml);
+    new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+  }
+  initCopyCode();
+}(window, document);
+</script>  
+  
+
+<script>
+  var btntop = $('#gotop');
+  btntop.on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, '300');
+  });
+
+  var $table = $('.content table').not($('figure.highlight > table'))
+$table.each(function () {
+  $(this).wrap('<div class="table-wrap"></div>')
+})
+</script>
+
+
+
+</html>

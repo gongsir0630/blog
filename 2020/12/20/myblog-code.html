@@ -1,0 +1,587 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+    <link rel="icon" href="https://thirdqq.qlogo.cn/qqapp/1110061270/E0B4163FDCD19C3791B49B64EDB9F688/100">
+  
+  
+      <meta name="author" content="程序员Kyle✨">
+  
+  
+      <meta name="subtitle" content="程序员Kyle✨的个人博客">
+  
+  
+      <meta name="description" content="程序员Kyle✨的个人博客,记录随笔与学习笔记，Java后端相关的知识，个人面经等">
+  
+  
+      <meta name="keywords" content=",程序员Kyle✨">
+  
+  
+    <link rel="alternate" href="/blog/atom.xml " title="程序员Kyle✨｜个人博客" type="application/atom+xml">
+  
+
+  
+
+  <title>2️⃣MyBlog-多平台代码托管 | 程序员Kyle✨｜个人博客</title>
+
+  
+
+  
+
+  
+      
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+  
+
+  <link rel="stylesheet" href="/blog/css/style.css" >
+  <link rel="stylesheet" href="/blog/css/partial/dark.css" >
+
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&amp;display=swap"  media="print" onload="this.media='all'">
+  
+  
+  
+
+  
+    
+      <link rel="stylesheet" href="/blog/css/partial/highlight/atom-one-light.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/css/iconfont.css">
+    
+  
+
+  
+    <script src="/blog/js/todark.js"></script>
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+</html>
+    
+<div class="nav index" style="height: 60px;">
+    <div class="title animated fadeInDown">
+        <div class="layui-container">
+                <div class="nav-title"><a href="/blog/" title="程序员Kyle✨｜个人博客">程序员Kyle✨｜个人博客</a></div>
+            <div class="nav-list">
+                <button> <span class=""></span><span style="display: block;"></span><span class=""></span> </button>
+                <ul class="layui-nav" lay-filter="">
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/search/ ">
+                            <i class=" fas fa-search-plus " style="color: rgb(3 169 244);"></i>
+                            <span class="layui-nav-item-name">搜索</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/ ">
+                            <i class=" fab fa-fort-awesome " style="color: rgb(255 107 107);"></i>
+                            <span class="layui-nav-item-name">首页</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/archives/ ">
+                            <i class=" fas fa-archive " style="color: rgb(10 189 227);"></i>
+                            <span class="layui-nav-item-name">时间线</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/tags/ ">
+                            <i class=" fas fa-hashtag " style="color: rgb(254 202 87);"></i>
+                            <span class="layui-nav-item-name">标签</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/categories ">
+                            <i class=" far fa-folder-open " style="color: rgb(29 209 161);"></i>
+                            <span class="layui-nav-item-name">分类</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/about/ ">
+                            <i class=" fab fa-grav " style="color: rgb(154 106 247);"></i>
+                            <span class="layui-nav-item-name">关于</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/guestbook/ ">
+                            <i class=" fab fa-telegram " style="color: hsl(205deg 100% 50%);"></i>
+                            <span class="layui-nav-item-name">留言</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/link/ ">
+                            <i class=" fab fa-weixin " style="color: hsl(152deg 73% 45%);"></i>
+                            <span class="layui-nav-item-name">友链</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/shuoshuo/ ">
+                            <i class=" fas fa-coffee " style="color:#31c7c1;"></i>
+                            <span class="layui-nav-item-name">说说</span>
+                        </a>
+                    </li>
+                    
+                    
+                        <li class="layui-nav-item" id="btn-toggle-dark">🌙</li>
+                    
+                    <span class="layui-nav-bar" style="left: 342px; top: 78px; width: 0px; opacity: 0;"></span>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<header class="header">
+        
+            <div class="logo">
+                    <a href="/blog/"><img src="https://thirdqq.qlogo.cn/qqapp/1110061270/E0B4163FDCD19C3791B49B64EDB9F688/100" onerror=this.onerror=null,this.src="/blog/img/loading.gif"></a>
+            </div>
+         
+    </div>
+     
+
+            <div class="motto">
+                <span>用我的指尖实现我的技术梦</span>
+            </div>
+    
+    
+            <div class="social">
+                
+                        <a class="social-icon" href="https://github.com/gongsir0630" target="_blank" title="Github">
+                            <i class="iconfont icon-GitHub" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="mailto:gongsir0630@gmail.com" target="_blank" title="Email">
+                            <i class="iconfont icon-email" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="https://space.bilibili.com/277602309" target="_blank" title="Bilibili">
+                            <i class="iconfont icon-bilibili" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="/atom.xml" target="_blank" title="rss">
+                            <i class="iconfont icon-rss" aria-hidden="true"></i>
+                          </a>
+                 
+            </div>
+     
+</header>
+
+    
+<article id="post">
+  <div class="post-title">2️⃣MyBlog-多平台代码托管</div>
+  
+<div class="post-meta">
+    
+      <div class="post-meta-item top">
+        <i class="far fa-bookmark"></i>
+        <span class="sticky">置顶</span>
+      </div>
+    
+    
+      <div class="post-meta-item date">
+        <span title="发表于 2020.12.20"><i class="far fa-calendar-alt"></i> 2020.12.20</span>
+      </div>
+      <div class="post-meta-item updated">
+        <span title="更新于 2023.07.30"><i class="far fa-calendar-check"></i> 2023.07.30</span>
+      </div>
+     
+    
+      <div class="post-meta-item categories">
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/blog/categories/%E5%8E%9F%E5%88%9B/">原创</a>
+        
+      </div>
+     
+    
+     <div class="post-meta-item wordcount">
+        
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">901 字</span>
+           
+        
+          <i class="far fa-clock"></i> <span class="post-count">3 分钟</span>
+                               
+      </div>
+     
+</div>
+
+
+  
+    <div id="toc" class="toc">
+          <h1>目录</h1>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E5%88%97-%F0%9F%93%92"><span class="toc-number">1.</span> <span class="toc-text">系列 📒</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2"><span class="toc-number">1.1.</span> <span class="toc-text">发布博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95"><span class="toc-number">1.2.</span> <span class="toc-text">系列文章目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%89%98%E7%AE%A1"><span class="toc-number">2.</span> <span class="toc-text">项目托管</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Github%E6%89%98%E7%AE%A1"><span class="toc-number">2.1.</span> <span class="toc-text">Github托管</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Coding%E6%89%98%E7%AE%A1"><span class="toc-number">2.2.</span> <span class="toc-text">Coding托管</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ssh-key%E7%AE%A1%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">ssh-key管理</span></a></li></ol>
+      </div>
+    
+  <div class="content">
+        <div><p><strong>MyBlog</strong> 系列文章第二篇，上篇文章说了如何使用<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a>搭建自己的专属博客，但自己有两台Mac，想在不同设备都可以发布博客，为了方便进行博客迁移，所以采用代码托管平台来存储我的hexo项目文件，这里采用国外的<a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>和国内的<a target="_blank" rel="noopener" href="https://e.coding.net/">Coding</a>.</p>
+<a id="more"></a>
+
+<h2 id="系列-📒"><a href="#系列-📒" class="headerlink" title="系列 📒"></a>系列 📒</h2><p>我的博客(<a target="_blank" rel="noopener" href="https://blog.gongsir.club/">程序员Kyle✨|技术博客</a>)是基于Hexo搭建的, 代码托管在GitHub和Coding, 部署在阿里云服务器, 其中部署是基于Coding提供的持续集成.</p>
+<h3 id="发布博客"><a href="#发布博客" class="headerlink" title="发布博客"></a>发布博客</h3><p>在本地编写 Markdown 文件, 然后将代码push到托管平台, 即可自动触发持续集成, 将网页部署到云服务器, 全自动~</p>
+<h3 id="系列文章目录"><a href="#系列文章目录" class="headerlink" title="系列文章目录"></a>系列文章目录</h3><ol>
+<li><a href="/2020/12/14/MyBlog-Hexo/">MyBlog-Hexo搭建自己的博客</a></li>
+<li><a href="/2020/12/20/myblog-code.html">MyBlog-多平台代码托管</a></li>
+<li><a href="/2021/01/22/myblog-deploy.html">MyBlog-Hexo项目持续集成发布</a><hr>
+
+</li>
+</ol>
+<h2 id="项目托管"><a href="#项目托管" class="headerlink" title="项目托管"></a>项目托管</h2><p>博客迁移时，我们需要保留以下文件：</p>
+<ul>
+<li>scaffolds/    –&gt; 模板</li>
+<li>source/   –&gt; 资源文件和md</li>
+<li>themes/   –&gt; 主题文件</li>
+<li>_config.yml   –&gt; 配置文件</li>
+<li>package.json  –&gt; 依赖文件</li>
+<li>package-lock.json –&gt; 插件版本</li>
+<li><strong>🌟注意：<code>public/</code>目录内容可以通过hexo生成，所以不需要backup</strong></li>
+</ul>
+<p>所以我们只需要将上述文件托管在GitHub、Coding等平台就可以，以后使用的时候，只需要本地安装node环境，然后拉取分支，执行：</p>
+<ol>
+<li>安装hexo-cli： <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
+<li>安装npm依赖： <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
+<li>解析生成静态文件： <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="Github托管"><a href="#Github托管" class="headerlink" title="Github托管"></a>Github托管</h3><ol>
+<li>登录GitHub，新建repository，复制仓库地址<code>@your_url</code>；</li>
+<li>本地代码文件夹<code>(blog.gongsir.club)</code>初始化，设置远程仓库地址：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin @your_url</span><br></pre></td></tr></table></figure>
+🌟注意：这里需要将<code>themes/blank</code>加为子模块（第一篇文章中提过，方便主题升级），此时项目根目录会自动生成一个<code>.gitmodules</code>文件，也需要上传到远程仓库：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add https://github.com/a2396837/hexo-theme-blank.git themes/blank</span><br></pre></td></tr></table></figure></li>
+<li>将本地代码push上去，文件结构如下：<br><img src= "/blog/img/loading.gif" data-src="https://cdn.gongsir.club/blog/img/20201221224358.png" alt="GitHub代码托管"></li>
+</ol>
+<h3 id="Coding托管"><a href="#Coding托管" class="headerlink" title="Coding托管"></a>Coding托管</h3><p>一开始我代码直接托管在GitHub上的，博客部署是基于<code>Git Actions</code>生成<code>public/</code>内容，将<code>public/</code>上传到另一个分支<code>page</code>，然后在自己的服务器拉取<code>page</code>分支以部署网站.</p>
+<p>这种方式有一些小问题：</p>
+<ul>
+<li>GitHub国内访问速度感人</li>
+<li><code>.config.yml</code>需要配置<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-deployer-git">hexo-deploy</a></li>
+<li>每次博客更新都需要手动部署</li>
+<li>综上，个人觉得还是比较麻烦</li>
+</ul>
+<p>所以后来采用了国内Coding进行托管，并基于Coding的持续集成对博客进行自动化部署.</p>
+<ol>
+<li>之前已经将代码托管在GitHub的，可以直接在Coding上克隆GitHub的仓库：<br><img src= "/blog/img/loading.gif" data-src="https://cdn.gongsir.club/blog/img/20201222120853.png" alt="Coding"></li>
+<li>修改本地git的config，将coding的url加入git配置：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url -add origin https://e.coding.net/xxx.git</span><br></pre></td></tr></table></figure>
+查看remote信息，此时应该包含两个push仓库，以后oush代码的时候，会同时push到github和coding：<br><img src= "/blog/img/loading.gif" data-src="https://cdn.gongsir.club/blog/img/20201222121345.png" alt="remote"></li>
+</ol>
+<h2 id="ssh-key管理"><a href="#ssh-key管理" class="headerlink" title="ssh-key管理"></a>ssh-key管理</h2><ol>
+<li><p>为了方便每次push代码时避免输入密码，需要在自己本地配置ssh-key，github和coding官方都有教程：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.github.com/articles/generating-an-ssh-key/">generating SSH keys</a></li>
+<li><a target="_blank" rel="noopener" href="https://help.coding.net/docs/project-settings/features/ssh.html">配置SSH公钥</a></li>
+</ul>
+</li>
+<li><p>本地多平台公钥管理，当本地存在多个平台的public-key时，需要添加config配置文件，否则某些平台公钥不会生效：</p>
+</li>
+</ol>
+<ul>
+<li>在<code>.ssh/</code>目录下新建config文件，配置不同平台的ssh公钥：<br><img src= "/blog/img/loading.gif" data-src="https://cdn.gongsir.club/blog/img/20201222122841.png" alt=".ssh目录"><br>config文件内容如下：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># github</span></span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line"><span class="comment"># 这里设置github的公钥文件路径</span></span><br><span class="line">IdentityFile C:\Users\gongsir\.ssh\id_ed25519</span><br><span class="line"></span><br><span class="line"><span class="comment"># coding</span></span><br><span class="line">Host e.coding.net</span><br><span class="line">HostName e.coding.net</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line"><span class="comment"># 这里设置coding的公钥文件路径</span></span><br><span class="line">IdentityFile C:\Users\gongsir\.ssh\id_rsa</span><br></pre></td></tr></table></figure></li>
+<li>使用<code>ssh -T git@github.com</code>、<code>ssh -T git@e.coding.net</code>验证：<br><img src= "/blog/img/loading.gif" data-src="https://cdn.gongsir.club/blog/img/20201222123241.png" alt="ssh验证"></li>
+</ul>
+</div>
+        
+  </div>
+
+    <div class="post_tags">
+      
+        <i class="fas fa-tag"></i> <a href="/blog/tags/hexo/" class="tag">hexo</a>
+      
+        <i class="fas fa-tag"></i> <a href="/blog/tags/MyBlog/" class="tag">MyBlog</a>
+      
+    </div>
+    <div class="post-nav">
+      
+        <div class="post-nav-prev post-nav-item">
+            <a href="/blog/2021/01/22/myblog-deploy.html" >3️⃣MyBlog-Hexo项目持续集成发布<i class="fa fa-chevron-left"></i></a>
+        </div>
+      
+      
+        <div class="post-nav-next post-nav-item">
+            <a href="/blog/2020/12/14/MyBlog-Hexo.html" >1️⃣MyBlog-Hexo搭建自己的博客<i class="fa fa-chevron-right"></i></a>
+        </div>
+      
+    </div>
+      
+
+
+
+  <div id="valine"></div>
+  <script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  <script>
+        new Valine({
+          el: '#valine',
+          appId: "7sd5RvAKvPf0dty5f4QfFL7R-gzGzoHsz",
+          appKey: "gjLXJe9CumUibqTPtE6TmIQn",
+          avatar: "robohash",
+          lang: "",
+          meta: 'nick,mail,link'.split(','),
+          requiredFields: 'nick,mail'.split(','),
+          placeholder: "评论记得带上邮箱,你的留言我会马上收到邮箱提醒哒",
+          pageSize:'10',
+          recordIP: 'false',
+          serverURLs: "https://blog.gongsir.club",
+          emojiCDN: "https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/",
+          enableQQ: "true",
+        });
+  </script>
+  
+
+</article>
+
+    
+<a id="gotop" href="javascript:" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    
+
+
+
+
+
+
+    
+<div id="bottom-outer">
+    <div id="bottom-inner">
+        © 2020 <i class="fa fa-heart" id="heart"></i> 程序员Kyle✨ 
+        <br>
+        Powered by 
+        <a target="_blank" rel="noopener" href="http://hexo.io">hexo</a> | Theme is <a target="_blank" rel="noopener" href="https://github.com/a2396837/hexo-theme-blank/">blank</a>
+        
+          <div class="icp-info">
+            
+            <img  class="icp-icon" src="/img/icp.png">
+            
+          <a href="http://www.beian.miit.gov.cn/" target="_blank"> 蜀ICP备19016450号</a>
+        </div>
+        
+    </div>  
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/layui-src@2.5.5/dist/layui.min.js"></script>
+
+
+
+  
+    <script src="/blog/js/script.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+  
+
+ 
+
+  <script src="/blog/js/local-search.js"></script>
+<script type="text/javascript">      
+  var search_path = "search.xml";
+if (search_path.length == 0) {
+  search_path = "search.xml";
+}
+var path = "/blog/" + search_path;
+  searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
+  
+
+
+  <script>
+    window.lazyLoadOptions = {
+      elements_selector: 'img',
+      threshold: 0
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script>   
+  
+
+
+  <script>
+    var images = $('img').not('.nav-logo img').not('.card img').not($('a>img')).not('.reward-content img')
+    images.each(function (i, o) {
+      var lazyloadSrc = $(o).attr('data-src') ? $(o).attr('data-src') : $(o).attr('src')
+      $(o).wrap(`<a href="${lazyloadSrc}" data-fancybox="group" data-caption="${$(o).attr('alt')}" class="fancybox"></a>`)
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script>
+  <script>
+        $().fancybox({
+      selector: '[data-fancybox]',
+      loop: true,
+      transitionEffect: 'slide',
+      protect: true,
+      buttons: ['slideShow', 'fullScreen', 'thumbs', 'close']
+    })
+  </script>   
+  
+
+
+  <script>
+  if (!window.MathJax) {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]],
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+              const display = !!node.type.match(/; *mode=display/)
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+              const text = document.createTextNode('')
+              node.parentNode.replaceChild(text, node)
+              math.start = {node: text, delim: '', n: 0}
+              math.end = {node: text, delim: '', n: 0}
+              doc.math.push(math)
+            }
+          }, '']
+        }
+      }
+    }
+    
+    var script = document.createElement('script')
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"
+    script.id = 'MathJax-script'
+    script.async = true
+    document.head.appendChild(script)
+  } else {
+    MathJax.startup.document.state(0)
+    MathJax.texReset()
+    MathJax.typeset()
+  }
+  </script>
+  
+
+
+  
+<script>
+if (document.getElementsByClassName('mermaid').length) {
+    if (window.mermaidJsLoad) mermaid.init()
+    else {
+      $.getScript("https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js", function () {
+        window.mermaidJsLoad = true
+        mermaid.initialize({
+          theme: "default",
+        })
+      })
+    }
+  }
+  </script>
+  
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script>
+  
+
+
+  <script src="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/js/firework.js"></script>
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js"></script>
+<script>
+!function (e, t, a) {
+  var initCopyCode = function(){
+    var copyHtml = '';
+    copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+    copyHtml += '  <i class="fa fa-clipboard"></i><span>复制</span>';
+    copyHtml += '</button>';
+    $(".highlight .code pre").before(copyHtml);
+    new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+  }
+  initCopyCode();
+}(window, document);
+</script>  
+  
+
+<script>
+  var btntop = $('#gotop');
+  btntop.on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, '300');
+  });
+
+  var $table = $('.content table').not($('figure.highlight > table'))
+$table.each(function () {
+  $(this).wrap('<div class="table-wrap"></div>')
+})
+</script>
+
+
+
+</html>
