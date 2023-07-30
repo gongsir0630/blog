@@ -1,4 +1,3 @@
-
 # html lang
 language: zh-CN
 
@@ -12,8 +11,8 @@ rss: /atom.xml
 
 # 左上角/中间的网站名字
 title_font:
-  font_link: 
-  font-family: 
+    font_link:
+    font-family:
 
 
 # 全局字体
@@ -21,248 +20,243 @@ title_font:
 #   font_link:
 #   font-family: Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, 'PingFang SC', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 fonts:
-  font_link: https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap
-  font-family: Noto Serif SC, serif, sans-serif
+    font_link: https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap
+    font-family: Noto Serif SC, serif, sans-serif
 
 
 # 顶部菜单  
 # 如果不需要显示某项,可以用'#'注释掉
 menu:
-  search: /search/ || fas fa-search-plus || rgb(3 169 244)
-  home: / || fab fa-fort-awesome || rgb(255 107 107)
-  时间线: /archives/ || fas fa-archive || rgb(10 189 227)
-  tag: /tags/ || fas fa-hashtag || rgb(254 202 87)
-  categories: /categories || far fa-folder-open || rgb(29 209 161)
-  about: /about/ || fab fa-grav || rgb(154 106 247)
-  guestbook: /guestbook/ || fab fa-telegram || hsl(205deg 100% 50%)
-  friends: /link/ || fab fa-weixin || hsl(152deg 73% 45%)
-  说说: /shuoshuo/ || fas fa-coffee ||#31c7c1
+    search: /blog/search/ || fas fa-search-plus || rgb(3 169 244)
+    home: /blog/ || fab fa-fort-awesome || rgb(255 107 107)
+    时间线: /blog/archives/ || fas fa-archive || rgb(10 189 227)
+    tag: /blog/tags/ || fas fa-hashtag || rgb(254 202 87)
+    categories: /blog/categories || far fa-folder-open || rgb(29 209 161)
+    about: /blog/about/ || fab fa-grav || rgb(154 106 247)
+    guestbook: /blog/guestbook/ || fab fa-telegram || hsl(205deg 100% 50%)
+    friends: /blog/link/ || fab fa-weixin || hsl(152deg 73% 45%)
+    说说: /blog/shuoshuo/ || fas fa-coffee ||#31c7c1
 
 
 
 # 如果 method: 1显示名称；method: 2显示头像
 logo:
-  method: 2
-  avatar: https://thirdqq.qlogo.cn/qqapp/1110061270/E0B4163FDCD19C3791B49B64EDB9F688/100
+    method: 2
+    avatar: https://thirdqq.qlogo.cn/qqapp/1110061270/E0B4163FDCD19C3791B49B64EDB9F688/100
 
 
 
 # 如果 method: 1只显示座右铭；method: 2则同时显示座右铭和社交图标；method: 3只显示社交图标
-subtitle_social: 
-  method: 2
-  subtitle:
-    motto: 用我的指尖实现我的技术梦
-    font-size: 1.25em
-    font-color: "#84ccc9"
+subtitle_social:
+    method: 2
+    subtitle:
+        motto: 用我的指尖实现我的技术梦
+        font-size: 1.25em
+        font-color: "#84ccc9"
 
-  social:
-    Github:
-      icon: iconfont icon-GitHub
-      url: https://github.com/gongsir0630
-    Email:
-      icon: iconfont icon-email
-      url: mailto:gongsir0630@gmail.com
-    # Steam:
-    #   icon: iconfont icon-steam
-    #   url: https://steamcommunity.com/id/a2396837
-    Bilibili:
-      icon: iconfont icon-bilibili
-      url: https://space.bilibili.com/277602309
-    # Netmusic:
-    #   icon: iconfont icon-wangyiyunyinle1
-    #   url: https://music.163.com/#/user/home?id=262078590
-    rss:
-      icon: iconfont icon-rss
-      url: /atom.xml
+    social:
+        Github:
+            icon: iconfont icon-GitHub
+            url: https://github.com/gongsir0630
+        Email:
+            icon: iconfont icon-email
+            url: mailto:gongsir0630@gmail.com
+        # Steam:
+        #   icon: iconfont icon-steam
+        #   url: https://steamcommunity.com/id/a2396837
+        Bilibili:
+            icon: iconfont icon-bilibili
+            url: https://space.bilibili.com/277602309
+        # Netmusic:
+        #   icon: iconfont icon-wangyiyunyinle1
+        #   url: https://music.163.com/#/user/home?id=262078590
+        rss:
+            icon: iconfont icon-rss
+            url: /atom.xml
 
 
 # 全局音乐播放器
 audio:
-  enable: false
+    enable: false
 
 
 # 是否打开暗黑模式
 todark:
-  enable: true       
+    enable: true
 
 
 # 本地搜索
 local_search:
-  enable: true
+    enable: true
 
 
 # 文章的相关信息
 post_meta:
-  page:
-    date: true                    # 主页是否显示日期
-    categories: true             # 主页是否显示分类
-    wordcount: true             # 主页是否显示字数统计
-    min2read: true             # 主页是否显示阅读时长
-  post:
-    date: true                # 文章页是否显示日期
-    categories: true         # 文章页是否显示字分类
-    wordcount: true         # 文章页是否显示字数统计
-    min2read: true         # 文章页是否显示阅读时长
-    
+    page:
+        date: true                    # 主页是否显示日期
+        categories: true             # 主页是否显示分类
+        wordcount: true             # 主页是否显示字数统计
+        min2read: true             # 主页是否显示阅读时长
+    post:
+        date: true                # 文章页是否显示日期
+        categories: true         # 文章页是否显示字分类
+        wordcount: true         # 文章页是否显示字数统计
+        min2read: true         # 文章页是否显示阅读时长
+
 
 # 文章目录
 toc:
-  enable: true
+    enable: true
 
 
 # 文章自动摘要
 auto_excerpt:
-  enable: true
-  length: 250
+    enable: true
+    length: 250
 
 
 # Lazyload (图片懒加载)
 # https://github.com/verlok/lazyload
 lazyload:
-  enable: true
-  image: /img/loading.gif
-  script: https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js
+    enable: true
+    image: /img/loading.gif
+    script: https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js
 
 
 
 # https://instant.page/
 # prefetch (预加载)
 instantpage:
-  enable: true
-  script: https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js
+    enable: true
+    script: https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js
 
 
 
 # fancybox
 fancybox:
-  enable: true
-  script: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js
+    enable: true
+    script: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js
 
 
 # 百度自动推送
 baidu_push:
-  enable: true
+    enable: true
 
 # 谷歌分析
 google_analytics:
 # 百度分析
-baidu_analytics: 
+baidu_analytics:
 
 
 # 代码复制功能
 copy:
-  enable: true
+    enable: true
 
 
 # Post copyright
 copyright:
-  enable: false
-  license_text: 本博客所有文章除特别声明外，均采用许可协议 <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> 转载请注明出处！
+    enable: false
+    license_text: 本博客所有文章除特别声明外，均采用许可协议 <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> 转载请注明出处！
 
 
 # 文章分享
 sharejs:
-  enable: false
-  sites: facebook,twitter,wechat,weibo,qq
-  style: https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css
-  scripts: https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js
+    enable: false
+    sites: facebook,twitter,wechat,weibo,qq
+    style: https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css
+    scripts: https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js
 
 
 # 赞助/捐献
 reward:
-  enable: false
-  AliPayQR: /img/alipay.jpg                 # 支付宝收款码
-  WeChatQR: /img/wechat.jpg                # 微信收款码
-  #PayPalLink: https://paypal.me                            # paypal收款链接
+    enable: false
+    AliPayQR: /img/alipay.jpg                 # 支付宝收款码
+    WeChatQR: /img/wechat.jpg                # 微信收款码
+    #PayPalLink: https://paypal.me                            # paypal收款链接
 
 
 
 # 一个内置的简单404页面
 page_404:
-  enable: true
-  subtitle: 'Oops! Page not found.'
+    enable: true
+    subtitle: 'Oops! Page not found.'
 
 
 # 备案:
 ICP:
-  enable: true
-  link: http://www.beian.miit.gov.cn/
-  text: 蜀ICP备19016450号
-  icon: /img/icp.png
+    enable: true
+    link: http://www.beian.miit.gov.cn/
+    text: 蜀ICP备19016450号
+    icon: /img/icp.png
 
 
 
 # highlight
 highlight:
-  code_color: "#fafafa"     # 代码块颜色
-  gutter_color: "#f2f2f2"   # 代码行号块颜色
+    code_color: "#fafafa"     # 代码块颜色
+    gutter_color: "#f2f2f2"   # 代码行号块颜色
 
 
 
 # mermaid
 mermaid:
-  enable: true
-  theme: default
-  script: https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+    enable: true
+    theme: default
+    script: https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
 
 
 
 # MathJax
 mathjax:
-  enable: true
-  script: https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js
+    enable: true
+    script: https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js
 
 
 
 # 鼠标点击特效(未来会增加更多种样式)
 Click:
-  firework: true
-  firework_script: https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/js/firework.js
+    firework: true
+    firework_script: https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/js/firework.js
 
 
 ##评论系统，当您打开一个评论系统，其他评论系统必须关掉:enable: flase
 # Valine 评论系统  https://valine.js.org
 valine:
-  enable: true # 如果使用valine，请设置改之为true
-  appid: 7sd5RvAKvPf0dty5f4QfFL7R-gzGzoHsz # leancloud application app id
-  appkey: gjLXJe9CumUibqTPtE6TmIQn # leancloud application app key
-  placeholder: 评论记得带上邮箱,你的留言我会马上收到邮箱提醒哒
-  avatar: robohash # gravatar style
-  lang: zh-CN # i18n: zh-CN/zh-TW/en/ja
-  meta: nick,mail,link
-  requiredFields: nick,mail # required fields (nick/mail)
-  pageSize: 10 # pagination size
-  recordIP: false # 是否记录评论者IP
-  serverURLs: https://blog.gongsir.club
-  emojiCDN: https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/
-  enableQQ: true
-  path: window.location.pathname #当前文章页路径，用于区分不同的文章页
+    enable: true # 如果使用valine，请设置改之为true
+    appid: 7sd5RvAKvPf0dty5f4QfFL7R-gzGzoHsz # leancloud application app id
+    appkey: gjLXJe9CumUibqTPtE6TmIQn # leancloud application app key
+    placeholder: 评论记得带上邮箱,你的留言我会马上收到邮箱提醒哒
+    avatar: robohash # gravatar style
+    lang: zh-CN # i18n: zh-CN/zh-TW/en/ja
+    meta: nick,mail,link
+    requiredFields: nick,mail # required fields (nick/mail)
+    pageSize: 10 # pagination size
+    recordIP: false # 是否记录评论者IP
+    serverURLs: https://blog.gongsir.club
+    emojiCDN: https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/
+    enableQQ: true
+    path: window.location.pathname #当前文章页路径，用于区分不同的文章页
 
 # OR
 
 #Waline 评论系统 https://waline.js.org
 waline:
-  enable: false
-  serverURL: 
-  avatar: monsterid # gravatar style https://zh-tw.gravatar.com/site/implement/images/#default-image
-  placeholder: Just go go # comment box placeholder
+    enable: false
+    serverURL:
+    avatar: monsterid # gravatar style https://zh-tw.gravatar.com/site/implement/images/#default-image
+    placeholder: Just go go # comment box placeholder
 
 
 # stylesheets loaded in the <head>
 stylesheets:
-- /css/partial/highlight/atom-one-light.css
-- https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css
-#- https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
-- https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css
-- https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/css/iconfont.css
+    - /css/partial/highlight/atom-one-light.css
+    - https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css
+    #- https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
+    - https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css
+    - https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/css/iconfont.css
 
 # scripts loaded in the end of the body
 scripts:
-- /js/script.js
-- https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js
-
-
-
-
-
+    - /js/script.js
+    - https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js
 
